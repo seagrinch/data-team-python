@@ -1,0 +1,121 @@
+class,series,manufacturer,model
+ACOMM,0,,
+ACOMM,M,,
+ADCPA,M,Teledyne RDI,Explorer DVL 600 kHz ADCP
+ADCPA,N,Teledyne RDI,Workhorse Navigator 600 kHz dual
+ADCPS,I,Teledyne RDI,WorkHorse LongRanger Monitor 75khz
+ADCPS,J,Teledyne RDI,WorkHorse LongRanger Sentinel 75khz
+ADCPS,K,Teledyne RDI,WorkHorse LongRanger Monitor 75khz
+ADCPS,L,Teledyne RDI,WorkHorse LongRanger Sentinel 75khz - inductive
+ADCPS,N,Teledyne RDI,WorkHorse LongRanger Sentinel 75khz - inductive
+ADCPT,A,Teledyne RDI,WorkHorse Sentinel 600khz
+ADCPT,B,Teledyne RDI,WorkHorse Monitor 300khz
+ADCPT,C,Teledyne RDI,WorkHorse Sentinel 300khz
+ADCPT,D,Teledyne RDI,WorkHorse Quartermaster Monitor 150khz
+ADCPT,E,Teledyne RDI,WorkHorse Quartermaster Monitor 150khz
+ADCPT,F,Teledyne RDI,WorkHorse Sentinel 150khz
+ADCPT,G,Teledyne RDI,WorkHorse Sentinel 150khz - inductive
+ADCPT,M,Teledyne RDI,WorkHorse Sentinel 600khz
+BOTPT,A,PMEL/Chadwick,PMEL cabled BPR/Tilt
+CAMDS,A,Kongsberg,Modified OE14-408
+CAMDS,B,Kongsberg,Custom Digital Still Camera Assembly
+CAMDS,C,Kongsberg,Custom Digital Still Camera Assembly
+CAMHD,A,SubC,1Cam
+CTDAV,N,Sea-Bird,SBE Glider Payload CTD (GP-CTD)
+CTDBP,C,Sea-Bird,SBE 16plusV2
+CTDBP,D,Sea-Bird,SBE 16plusV2
+CTDBP,E,Sea-Bird,SBE 16plusV2
+CTDBP,F,Sea-Bird,SBE 16plusV2
+CTDBP,N,Sea-Bird,SBE 16plusV2
+CTDBP,O,Sea-Bird,SBE 16plusV2
+CTDBP,P,Sea-Bird,SBE 16plus-IM V2
+CTDGV,M,Sea-Bird,SBE Glider Payload CTD (GP-CTD)
+CTDMO,G,Sea-Bird,SBE 37IM
+CTDMO,H,Sea-Bird,SBE 37IM
+CTDMO,Q,Sea-Bird,SBE 37IM
+CTDMO,R,Sea-Bird,SBE 37IM
+CTDPF,A,Sea-Bird,SBE 16plusV2
+CTDPF,B,Sea-Bird,SBE 16plusV2
+CTDPF,J,Sea-Bird,FastCAT 49 CTD
+CTDPF,K,Sea-Bird,SBE 52MP
+CTDPF,L,Sea-Bird,SBE 52MP
+DOFST,A,Sea-Bird,SBE 43
+DOFST,K,Sea-Bird,SBE 43F
+DOSTA,D,Aanderaa,Optode 4831
+DOSTA,J,Aanderaa,Optode 4831
+DOSTA,L,Aanderaa,Optode 4330
+DOSTA,M,Aanderaa,Optode 4831
+DOSTA,N,Aanderaa,Optode 4330
+FDCHP,A,WHOI,DCFS
+FLCDR,A,WET Labs,FLCDRTD (CDOM)
+FLNTU,A,WET Labs,FLNTURTD (chlorophyll and backscatter)
+FLOBN,A,"Solomon, UW",Mosquito benthic flow sampler
+FLORD,D,WET Labs,ECO Triplet-w
+FLORD,G,WET Labs,ECO FLBB-SB
+FLORD,L,WET Labs,FLBBRTD
+FLORD,M,WET Labs,ECO Puck FLBB-SLC
+FLORT,D,WET Labs,ECO Triplet-w
+FLORT,J,WET Labs,ECO Triplet-w
+FLORT,K,WET Labs,ECO Triplet
+FLORT,M,WET Labs,ECO Puck FLBBCD-SLK
+FLORT,N,WET Labs,ECO Triplet
+FLORT,O,WET Labs,ECO BB3
+HPIES,A,"Sanford, UW",cabled HPIES
+HYDBB,A,Ocean Sonics,icListen HF
+HYDGN,0,RKI Instruments,M2A transmitters
+HYDLF,A,HTI ,90-U
+MASSP,A,"Girguis, Harvard",Cabled Mass Spec
+METBK,A,Star Engineering ,ASIMET
+MOPAK,0,MicroStrain,3DM-GX3-25
+NUTNR,A,Satlantic,Deep SUNA
+NUTNR,B,Satlantic,ISUS
+NUTNR,J,Satlantic,SUNA V2
+NUTNR,M,Satlantic,SUNA V2
+NUTNR,N,Satlantic,Deep SUNA
+OBSBB,A,Guralp,CMG-1T/5T
+OBSSP,A,Guralp,CMG-6TF
+OPTAA,C,WET Labs,AC-S Deep
+OPTAA,D,WET Labs,AC-S
+OPTAA,J,WET Labs,AC-S
+OSMOI,A,"TLR, Inc.",OsmoSampler
+PARAD,A,Satlantic,Digital PAR
+PARAD,J,WET Labs,ECO PAR
+PARAD,K,Biospherical Instruments,QSP-2200
+PARAD,M,Biospherical Instruments,QSP-2155
+PARAD,N,Biospherical Instruments,QSP-2150
+PCO2A,A,Pro-Oceanus,pCO2-pro
+PCO2W,A,Sunburst,SAMI-pCO2
+PCO2W,B,Sunburst,SAMI-pCO2
+PCO2W,C,Sunburst,SAMI-pCO2 - inductive
+PHSEN,A,Sunburst,SAMI-pH
+PHSEN,D,Sunburst,SAMI-pH
+PHSEN,E,Sunburst,SAMI-pH - inductive
+PHSEN,F,Sunburst,SAMI-pH
+PPSDN,A,PMEL/Butterfield,modified McLane Particulate Sampler
+PRESF,A,Sea-Bird,SBE 26plus
+PRESF,B,Sea-Bird,SBE 26plus
+PRESF,C,Sea-Bird,SBE 26plus
+PREST,A,Sea-Bird,SBE 54
+PREST,B,Sea-Bird,SBE 54
+RASFL,A,PMEL/Butterfield,Modified McLane Remote Access Sampler
+SPKIR,A,Satlantic,OCR507 ICSW
+SPKIR,B,Satlantic,OCR507 ICSW
+SPKIR,J,Satlantic,OCR507 ICSW
+THSPH,A,"Kang/Seyfried, U Minnesota","Vent Chemistry Instrument (H2, H2S, pH)"
+TMPSF,A,RBR Global,XR-420
+TRHPH,A,"Lilley, UW",Vent Temperature & Resistivity
+VADCP,A,Teledyne RDI,Workhorse custom 600 kHz 5 Beam 
+VEL3D,A,Falmouth Scientific,ACM-3D-MP
+VEL3D,B,Nobska,MAVS-4
+VEL3D,C,Nortek,VECTOR
+VEL3D,D,Nortek,VECTOR
+VEL3D,K,Nortek,Aquadopp II
+VEL3D,L,Falmouth Scientific,ACM-Plus
+VELPT,A,Nortek,Aquadopp 300m
+VELPT,B,Nortek,Aquadopp 3000m
+VELPT,D,Nortek,Aquadopp
+VELPT,J,Nortek,Aquadopp HR
+WAVSS,A,Axys Technologies,TRIAXYS
+ZPLSC,B,Kongsberg,Modified EK-60
+ZPLSC,C,ASL Environmental Sciences,AZFP
+ZPLSG,A,ASL Environmental Sciences,AZFP
