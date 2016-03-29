@@ -5,7 +5,8 @@ import argparse
 # Command Line Arguments
 parser = argparse.ArgumentParser(description='OOI Data Team Portal Importer')
 parser.add_argument('-o','--option',
-  choices=['sites', 'platforms','nodes','instruments','instrument_classes','instrument_models'],
+  choices=['sites', 'platforms','nodes','instruments','instrument_classes','instrument_models',
+    'assets','deployments'],
   help='Type of data to load')
 args = parser.parse_args()
 
@@ -26,6 +27,10 @@ def main():
     datateam.instrument_class.load(db)
   elif args.option=="instrument_models":
     datateam.instrument_model.load(db)
+  elif args.option=="assets":
+    datateam.assets.load(db)
+  elif args.option=="deployments":
+    datateam.deployments.load(db)
 
 
 # Run main function when in comand line mode        

@@ -7,3 +7,4 @@ import node
 import instrument
 import instrument_class
 import instrument_model
+import assets
