@@ -1,10 +1,6 @@
-#from database import Database
-
+""" OOI Datateam Import Module """
 from mysql import MysqlPython
-import site
-import platform
-import node
-import instrument
+import designators
 import instrument_class
 import instrument_model
 import assets

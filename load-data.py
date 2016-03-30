@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# OOI Datateam Import - Load Data Script
+
 import datateam
 import argparse
 
@@ -16,13 +18,13 @@ def main():
   db = datateam.MysqlPython()
   db.load_config()
   if args.option =="sites":
-    datateam.site.load(db)
+    datateam.designators.load_sites(db)
   elif args.option=="platforms":
-    datateam.platform.load(db)
+    datateam.designators.load_platforms(db)
   elif args.option=="nodes":
-    datateam.node.load(db)
+    datateam.designators.load_nodes(db)
   elif args.option=="instruments":
-    datateam.instrument.load(db)
+    datateam.designators.load_instruments(db)
   elif args.option=="instrument_classes":
     datateam.instrument_class.load(db)
   elif args.option=="instrument_models":

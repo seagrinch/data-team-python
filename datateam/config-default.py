@@ -1,6 +1,5 @@
-# EPE Time Series Service 
-# Database Configuration
-# Revised 7/2//2014
+# OOI Datateam Import Module 
+# Database Configuration Template
 
 ts_config = {
     'db_host': "localhost",

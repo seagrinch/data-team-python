@@ -1,4 +1,4 @@
-# OOI Datateam Common Functions
+""" OOI Datateam Import Module - Common Functions """
 
 def remove_extraneous_columns(headers, data_dict):
   """Get rid of extraneous columns"""

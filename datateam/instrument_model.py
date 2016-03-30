@@ -1,4 +1,4 @@
-# OOI Datateam Instrument Model Functions
+""" OOI Datateam Import Module - Instrument Model Functions """
 import csv
 import time
 from .common import *

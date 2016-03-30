@@ -1,4 +1,4 @@
-# OOI Datateam Asset Functions
+""" OOI Datateam Import Module - Asset Functions """
 import csv
 import time
 from .common import *
