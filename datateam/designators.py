@@ -14,10 +14,11 @@ def find(db,reference_designator):
     return False
 
 
-def save(db,data,columns,designator_type):
+def save(db,data,columns,designator_type, parent):
   """Save an Instrument to the database"""
   data = remove_extraneous_columns(columns, data)
   data['designator_type'] = designator_type
+  data['parent_designator'] = parent
 
   id = find(db,data['reference_designator'])
   if id == False:
@@ -36,7 +37,7 @@ def load_sites(db):
   with open("sites.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-      save(db, row, columns, 'site')
+      save(db, row, columns, 'site', '')
 
 
 def load_platforms(db):
@@ -45,7 +46,7 @@ def load_platforms(db):
   with open("platforms.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-      save(db, row, columns, 'platform')
+      save(db, row, columns, 'platform', row['reference_designator'][:2])
 
 
 def load_nodes(db):
@@ -54,7 +55,7 @@ def load_nodes(db):
   with open("nodes.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-      save(db, row, columns, 'node')
+      save(db, row, columns, 'node', row['reference_designator'][:8])
 
 
 def load_instruments(db):
@@ -63,4 +64,4 @@ def load_instruments(db):
   with open("instruments.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-      save(db, row, columns, 'instrument')
+      save(db, row, columns, 'instrument', row['reference_designator'][:14])
