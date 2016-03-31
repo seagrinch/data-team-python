@@ -60,8 +60,27 @@ def load_nodes(db):
 
 def load_instruments(db):
   """Load instruments into the database"""
+
+  # Load in the Instrument Classes file for lookups
+  catalogfile = 'instrument_classes.csv'
+  vocab={}
+  with open(catalogfile, 'rU') as csvfile: # was rb
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+      vocab[row['class']] = row['name']
+
+  # Save the Instrument
   columns = ['reference_designator', 'name', 'type', 'description', 'start_depth', 'end_depth', 'location']
   with open("instruments.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
+      row['name'] = find_vocab(vocab, row['reference_designator'][18:23])
       save(db, row, columns, 'instrument', row['reference_designator'][:14])
+
+
+def find_vocab(vocab, designator):
+  """Vocabulary Lookup"""
+  if designator in vocab.keys():
+    return vocab[designator]
+  else :
+    return designator
