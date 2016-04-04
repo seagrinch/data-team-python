@@ -37,7 +37,8 @@ class MysqlPython(object):
         user   = self.__user, 
         passwd = self.__password, 
         db     = self.__database, 
-        unix_socket = self.__socket)
+        unix_socket = self.__socket,
+        charset='utf8')
       self.__connection = cnx
       self.__session    = cnx.cursor(cursorclass=MySQLdb.cursors.DictCursor) #
     except MySQLdb.Error as e:
@@ -123,6 +124,20 @@ class MysqlPython(object):
 
   def delete(self, table, index):
     query = "DELETE FROM %s WHERE id=%d" % (table,index)
+
+    self.__open()
+    self.__session.execute(query)
+    self.__connection.commit()
+
+    # Obtain rows affected
+    delete_rows = self.__session.rowcount
+    self.__close()
+
+    return delete_rows
+
+
+  def truncate_table(self, table):
+    query = "DELETE FROM %s WHERE 1" % (table)
 
     self.__open()
     self.__session.execute(query)
