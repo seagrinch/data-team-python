@@ -8,7 +8,7 @@ import argparse
 parser = argparse.ArgumentParser(description='OOI Data Team Portal Importer')
 parser.add_argument('-o','--option',
   choices=['sites', 'platforms','nodes','instruments','instrument_classes','instrument_models',
-    'assets','deployments','preload'],
+    'assets','deployments','preload','ds'],
   help='Type of data to load')
 args = parser.parse_args()
 
@@ -35,6 +35,8 @@ def main():
     datateam.deployments.load(db)
   elif args.option=="preload":
     datateam.preload.load(db)
+  elif args.option=="ds":
+    datateam.designator_stream.load(db)
 
 
 # Run main function when in comand line mode        

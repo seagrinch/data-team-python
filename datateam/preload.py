@@ -1,4 +1,4 @@
-""" OOI Datateam Import Module - Instrument Model Functions """
+""" OOI Datateam Import Module - Preload Model Functions """
 import sqlite3
 import csv
 import time
@@ -35,7 +35,6 @@ def load(db):
   load_parameter_functions(db)
   load_streams(db)
   load_parameters_streams(db)
-  load_designators_streams(db)
 
 
 def load_parameters(db):
@@ -156,15 +155,3 @@ def load_parameters_streams(db):
     res = db.insert('parameters_streams', data)
     #print "Saved: " +str(data['stream_id']) + '-' +str(data['parameter_id'])
   print "Step 4 - Parameter-Stream Joins Loaded"
-
-def load_designators_streams(db):
-  """Load Designator/Stream linking table into the database"""
-  r = db.truncate_table('designators_streams')
-  print "Truncated table rows deleted " +str(r)
-
-  with open("designators_streams.csv", 'rb') as csvfile:
-    reader = csv.DictReader(csvfile)
-    for row in reader:
-      res = db.insert('designators_streams', row)
-
-  print "Step 5 - Designator-Stream Joins Loaded"
