@@ -15,7 +15,7 @@ def find(db,instrument_class, instrument_series):
 
 def save(db,data):
   """Save an Instrument Model to the database"""
-  columns = ['class', 'series', 'manufacturer', 'model']
+  columns = ['class', 'series', 'name', 'make', 'model']
   data = remove_extraneous_columns(columns, data)
 
   id = find(db,data['class'], data['series'])
@@ -31,7 +31,7 @@ def save(db,data):
 
 def load(db):
   """Load Instrument Models into the database"""
-  with open("instrument_models.csv", 'rb') as csvfile:
+  with open("infrastructure/instrument_models.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
       save(db,row)

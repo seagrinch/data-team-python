@@ -31,7 +31,7 @@ def save(db,data):
 
 def load(db):
   """Load Instrument Classes into the database"""
-  with open("instrument_classes.csv", 'rb') as csvfile:
+  with open("infrastructure/instrument_classes.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
       save(db,row)

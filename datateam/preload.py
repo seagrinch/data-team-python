@@ -16,7 +16,7 @@ def find(db,table,id):
 
 def save(db, table, data):
   """Save a record to the database"""
-  #columns = ['name','display_name','standard_name','precision','data_product_identifier','description']
+  #columns = ['name','display_name','standard_name','parameter_precision','data_product_identifier','description']
   #data = remove_extraneous_columns(columns, data)
 
   id = find(db,table, data['id'])
@@ -70,7 +70,7 @@ def load_parameters(db):
       data['fill_value'] = fill_values[row['fill_value_id']]
     data['display_name'] = row['display_name']
     data['standard_name'] = row['standard_name']
-    data['precision'] = row['precision']
+    data['parameter_precision'] = row['precision']
     data['parameter_function_id'] = row['parameter_function_id']
     data['parameter_function_map'] = row['parameter_function_map']
     data['data_product_identifier'] = row['data_product_identifier']
@@ -139,7 +139,7 @@ def load_parameters_streams(db):
   """Load Parameter/Stream linking table into the database"""
   # Truncate join table
   r = db.truncate_table('parameters_streams')
-  print "Truncated table rows deleted " +str(r)
+  print "Truncated table - Rows deleted: " +str(r)
 
   conn = sqlite3.connect('repos/preload-database/preload.db')
   conn.row_factory = sqlite3.Row
@@ -154,4 +154,5 @@ def load_parameters_streams(db):
     data['parameter_id'] = row['parameter_id']
     res = db.insert('parameters_streams', data)
     #print "Saved: " +str(data['stream_id']) + '-' +str(data['parameter_id'])
+    
   print "Step 4 - Parameter-Stream Joins Loaded"

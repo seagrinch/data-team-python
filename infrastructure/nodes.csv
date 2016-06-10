@@ -1,0 +1,252 @@
+reference_designator,name
+CE01ISSM-MFC31,Seafloor Multi-Function Node (MFN)
+CE01ISSM-MFD35,Seafloor Multi-Function Node (MFN)
+CE01ISSM-MFD37,Seafloor Multi-Function Node (MFN)
+CE01ISSM-RID16,Near Surface Instrument Frame
+CE01ISSM-SBC11,Surface Buoy
+CE01ISSM-SBD17,Surface Buoy
+CE01ISSP-SP001,Surface Piercing Profiler
+CE02SHBP-LJ01D,Low-Power JBox (LJ01D)
+CE02SHBP-MJ01C,Medium-Power JBox (MJ01C)
+CE02SHSM-RIC21,Near Surface Instrument Frame
+CE02SHSM-RID26,Near Surface Instrument Frame
+CE02SHSM-RID27,Near Surface Instrument Frame
+CE02SHSM-SBC11,Surface Buoy
+CE02SHSM-SBD11,Surface Buoy
+CE02SHSM-SBD12,Surface Buoy
+CE02SHSP-SP001,Surface Piercing Profiler
+CE04OSBP-LJ01C,Low-Power JBox (LJ01C)
+CE04OSBP-LV01C,Low-Power JBox (LJ0CI)
+CE04OSPD-DP01B,Wire-Following Profiler (DP01B)
+CE04OSPD-PD01B,Profiler Docking Station (PD01B)
+CE04OSPS-PC01B,200m Platform (PC01B)
+CE04OSPS-SF01B,Winched Profiler (SF01B)
+CE04OSSM-RIC21,Near Surface Instrument Frame
+CE04OSSM-RID26,Near Surface Instrument Frame
+CE04OSSM-RID27,Near Surface Instrument Frame
+CE04OSSM-SBC11,Surface Buoy
+CE04OSSM-SBD11,Surface Buoy
+CE04OSSM-SBD12,Surface Buoy
+CE05MOAS-GL247,Coastal Glider 247
+CE05MOAS-GL311,Coastal Glider 311
+CE05MOAS-GL312,Coastal Glider 312
+CE05MOAS-GL319,Coastal Glider 319
+CE05MOAS-GL320,Coastal Glider 320
+CE05MOAS-GL326,Coastal Glider 326
+CE05MOAS-GL327,Coastal Glider 327
+CE05MOAS-GL381,Coastal Glider 381
+CE05MOAS-GL382,Coastal Glider 382
+CE05MOAS-GL383,Coastal Glider 383
+CE05MOAS-GL384,Coastal Glider 384
+CE05MOAS-GL386,Coastal Glider 386
+CE06ISSM-MFC31,Seafloor Multi-Function Node (MFN)
+CE06ISSM-MFD35,Seafloor Multi-Function Node (MFN)
+CE06ISSM-MFD37,Seafloor Multi-Function Node (MFN)
+CE06ISSM-RID16,Near Surface Instrument Frame
+CE06ISSM-SBC11,Surface Buoy
+CE06ISSM-SBD17,Surface Buoy
+CE06ISSP-SP001,Surface Piercing Profiler
+CE07SHSM-MFC31,Seafloor Multi-Function Node (MFN)
+CE07SHSM-MFD35,Seafloor Multi-Function Node (MFN)
+CE07SHSM-MFD37,Seafloor Multi-Function Node (MFN)
+CE07SHSM-RIC21,Near Surface Instrument Frame
+CE07SHSM-RID26,Near Surface Instrument Frame
+CE07SHSM-RID27,Near Surface Instrument Frame
+CE07SHSM-SBC11,Surface Buoy
+CE07SHSM-SBD11,Surface Buoy
+CE07SHSM-SBD12,Surface Buoy
+CE07SHSP-SP001,Surface Piercing Profiler
+CE09OSPM-SBS01,Surface Buoy
+CE09OSPM-WFP01,Wire-Following Profiler
+CE09OSSM-MFC31,Seafloor Multi-Function Node (MFN)
+CE09OSSM-MFD35,Seafloor Multi-Function Node (MFN)
+CE09OSSM-MFD37,Seafloor Multi-Function Node (MFN)
+CE09OSSM-RIC21,Near Surface Instrument Frame
+CE09OSSM-RID26,Near Surface Instrument Frame
+CE09OSSM-RID27,Near Surface Instrument Frame
+CE09OSSM-SBC11,Surface Buoy
+CE09OSSM-SBD11,Surface Buoy
+CE09OSSM-SBD12,Surface Buoy
+CP01CNSM-MFC31,Seafloor Multi-Function Node (MFN)
+CP01CNSM-MFD35,Seafloor Multi-Function Node (MFN)
+CP01CNSM-MFD37,Seafloor Multi-Function Node (MFN)
+CP01CNSM-RIC21,Near Surface Instrument Frame
+CP01CNSM-RIC31,Near Surface Instrument Frame
+CP01CNSM-RID26,Near Surface Instrument Frame
+CP01CNSM-RID27,Near Surface Instrument Frame
+CP01CNSM-SBC11,Surface Buoy
+CP01CNSM-SBD11,Surface Buoy
+CP01CNSM-SBD12,Surface Buoy
+CP01CNSP-SP001,Surface Piercing Profiler
+CP02PMCI-RII01,Mooring Line
+CP02PMCI-SBS01,Surface Buoy
+CP02PMCI-WFP01,Wire-Following Profiler
+CP02PMCO-RII01,Mooring Line
+CP02PMCO-SBS01,Surface Buoy
+CP02PMCO-WFP01,Wire-Following Profiler
+CP02PMUI-RII01,Mooring Line
+CP02PMUI-SBS01,Surface Buoy
+CP02PMUI-WFP01,Wire-Following Profiler
+CP02PMUO-RII01,Mooring Line
+CP02PMUO-SBS01,Surface Buoy
+CP02PMUO-WFP01,Wire-Following Profiler
+CP03ISSM-MFC31,Seafloor Multi-Function Node (MFN)
+CP03ISSM-MFD35,Seafloor Multi-Function Node (MFN)
+CP03ISSM-MFD37,Seafloor Multi-Function Node (MFN)
+CP03ISSM-RIC21,Near Surface Instrument Frame
+CP03ISSM-RID26,Near Surface Instrument Frame
+CP03ISSM-RID27,Near Surface Instrument Frame
+CP03ISSM-SBC11,Surface Buoy
+CP03ISSM-SBD11,Surface Buoy
+CP03ISSM-SBD12,Surface Buoy
+CP03ISSP-SP001,Surface Piercing Profiler
+CP04OSPM-SBS01,Surface Buoy
+CP04OSPM-SBS11,Surface Buoy
+CP04OSPM-WFP01,Wire-Following Profiler
+CP04OSSM-MFC31,Seafloor Multi-Function Node (MFN)
+CP04OSSM-MFD35,Seafloor Multi-Function Node (MFN)
+CP04OSSM-MFD37,Seafloor Multi-Function Node (MFN)
+CP04OSSM-RIC21,Near Surface Instrument Frame
+CP04OSSM-RID26,Near Surface Instrument Frame
+CP04OSSM-RID27,Near Surface Instrument Frame
+CP04OSSM-SBC11,Surface Buoy
+CP04OSSM-SBD11,Surface Buoy
+CP04OSSM-SBD12,Surface Buoy
+CP05MOAS-A6264,???
+CP05MOAS-GL335,Coastal Glider 335
+CP05MOAS-GL336,Coastal Glider 336
+CP05MOAS-GL339,Coastal Glider 339
+CP05MOAS-GL340,Coastal Glider 340
+CP05MOAS-GL374,Coastal Glider 374
+CP05MOAS-GL375,Coastal Glider 375
+CP05MOAS-GL376,Coastal Glider 376
+CP05MOAS-GL379,Coastal Glider 379
+CP05MOAS-GL380,Coastal Glider 380
+CP05MOAS-GL387,Coastal Glider 387
+CP05MOAS-GL388,Coastal Glider 388
+CP05MOAS-GL389,Coastal Glider 389
+GA01SUMO-RID16,Near Surface Instrument Frame
+GA01SUMO-RII11,Mooring Line
+GA01SUMO-SBC11,Surface Buoy
+GA01SUMO-SBD11,Surface Buoy
+GA01SUMO-SBD12,Surface Buoy
+GA02HYPM-MPM01,Mooring Line
+GA02HYPM-RIM01,Mooring Line
+GA02HYPM-WFP02,Wire-Following Profiler Upper
+GA02HYPM-WFP03,Wire-Following Profiler Lower
+GA03FLMA-RIM01,Mooring Line
+GA03FLMA-RIS01,Mooring Line
+GA03FLMB-RIM01,Mooring Line
+GA03FLMB-RIS01,Mooring Line
+GA05MOAS-GL493,Open Ocean Glider 493
+GA05MOAS-GL494,Open Ocean Glider 494
+GA05MOAS-GL495,Open Ocean Glider 495
+GA05MOAS-GL496,Open Ocean Glider 496
+GA05MOAS-GL538,Open Ocean Glider 538
+GA05MOAS-GL563,Open Ocean Glider 563
+GA05MOAS-PG562,Global Profiling Glider 562
+GA05MOAS-PG563,Global Profiling Glider 563
+GI01SUMO-RID16,Near Surface Instrument Frame
+GI01SUMO-RII11,Mooring Line
+GI01SUMO-SBC11,Surface Buoy
+GI01SUMO-SBD11,Surface Buoy
+GI01SUMO-SBD12,Surface Buoy
+GI02HYPM-MPM01,Mooring Line
+GI02HYPM-RIM01,Mooring Line
+GI02HYPM-WFP02,Wire-Following Profiler Upper
+GI03FLMA-RI000,Mooring Line
+GI03FLMA-RIM01,Mooring Line
+GI03FLMA-RIS01,Mooring Line
+GI03FLMB-RI000,Mooring Line
+GI03FLMB-RIM01,Mooring Line
+GI03FLMB-RIS01,Mooring Line
+GI05MOAS-GL469,Open Ocean Glider 469
+GI05MOAS-GL477,Open Ocean Glider 477
+GI05MOAS-GL478,Open Ocean Glider 478
+GI05MOAS-GL484,Open Ocean Glider 484
+GI05MOAS-GL485,Open Ocean Glider 485
+GI05MOAS-GL495,Open Ocean Glider 495
+GI05MOAS-PG528,Global Profiling Glider 528
+GP02HYPM-MPM01,Mooring Line
+GP02HYPM-RIM01,Mooring Line
+GP02HYPM-WFP02,Wire-Following Profiler Upper
+GP02HYPM-WFP03,Wire-Following Profiler Lower
+GP03FLMA-RIM01,Mooring Line
+GP03FLMA-RIS01,Mooring Line
+GP03FLMB-RIM01,Mooring Line
+GP03FLMB-RIS01,Mooring Line
+GP05MOAS-GL276,Open Ocean Glider 276
+GP05MOAS-GL361,Open Ocean Glider 361
+GP05MOAS-GL362,Open Ocean Glider 362
+GP05MOAS-GL363,Open Ocean Glider 363
+GP05MOAS-GL364,Open Ocean Glider 364
+GP05MOAS-GL365,Open Ocean Glider 365
+GP05MOAS-GL453,Open Ocean Glider 453
+GP05MOAS-GL523,Open Ocean Glider 523
+GP05MOAS-GL525,Open Ocean Glider 525
+GP05MOAS-GL537,Open Ocean Glider 537
+GP05MOAS-PG514,Global Profiling Glider 514
+GP05MOAS-PG515,Global Profiling Glider 515
+GS01SUMO-RID16,Near Surface Instrument Frame
+GS01SUMO-RII11,Mooring Line
+GS01SUMO-SBC11,Surface Buoy
+GS01SUMO-SBD11,Surface Buoy
+GS01SUMO-SBD12,Surface Buoy
+GS02HYPM-MPM01,Mooring Line
+GS02HYPM-RIM01,Mooring Line
+GS02HYPM-WFP02,Wire-Following Profiler Upper
+GS02HYPM-WFP03,Wire-Following Profiler Lower
+GS03FLMA-RIM01,Mooring Line
+GS03FLMA-RIS01,Mooring Line
+GS03FLMB-RIM01,Mooring Line
+GS03FLMB-RIS01,Mooring Line
+GS05MOAS-GL484,Open Ocean Glider 484
+GS05MOAS-GL485,Open Ocean Glider 485
+GS05MOAS-GL486,Open Ocean Glider 486
+GS05MOAS-GL524,Open Ocean Glider 524
+GS05MOAS-GL560,Open Ocean Glider 560
+GS05MOAS-GL561,Open Ocean Glider 561
+GS05MOAS-PG565,Global Profiling Glider 565
+GS05MOAS-PG566,Global Profiling Glider 566
+RS01SBPD-DP01A,Wire-Following Profiler (DP01A)
+RS01SBPS-LV01A,Low-Voltage Node (LV01A)
+RS01SBPS-PC01A,200m Platform (PC01A)
+RS01SBPS-SC01A,Winch Controller (SC01A)
+RS01SBPS-SF01A,Winched Profiler (SF01A)
+RS01SHDR-PN01B,Primary Node (PN01B)
+RS01SLBS-LJ01A,Low-Power JBox (LJ01A)
+RS01SLBS-MJ01A,Medium-Power JBox (MJ01A)
+RS01SLBS-PN01A,Primary Node (PN01A)
+RS01SUM1-LJ01B,Low-Power JBox (LJ01B)
+RS01SUM1-LV01B,Low-Voltage Node (LV01B)
+RS01SUM2-MJ01B,Medium-Power JBox (MJ01B)
+RS03ASHS-MJ03B,Medium-Power JBox (MJ03B)
+RS03ASHS-PN03B,Primary Node (PN03B)
+RS03AXBS-LJ03A,Low-Power JBox (LJ03A)
+RS03AXBS-MJ03A,Medium-Power JBox (MJ03A)
+RS03AXBS-PN03A,Primary Node (PN03A)
+RS03AXPD-DP03A,Wire-Following Profiler (DP03A)
+RS03AXPD-PD03A,Profiler Docking Station (PD03A)
+RS03AXPS-LV03A,Low-Voltage Node (LV03A)
+RS03AXPS-PC03A,200m Platform (PC03A)
+RS03AXPS-SC03A,Winch Controller (SC03A)
+RS03AXPS-SF03A,Winched Profiler (SF03A)
+RS03AXSM-PN03B,Primary Node (PN03B)
+RS03CCAL-MJ03F,Medium-Power JBox (MJ03F)
+RS03ECAL-MJ03E,Medium-Power JBox (MJ03E)
+RS03INT1-MJ03C,Medium-Power JBox (MJ03C)
+RS03INT2-MJ03D,Medium-Power JBox (MJ03D)
+RS05MPPI-PN05A,Primary Node (PN05A)
+SSRSPACC-F10NA,Force 10 Network Switch North A
+SSRSPACC-F10NB,Force 10 Network Switch North B
+SSRSPACC-F10SA,Force 10 Network Switch South A
+SSRSPACC-F10SB,Force 10 Network Switch South B
+SSRSPACC-OTNNA,Optical Transport Network North A
+SSRSPACC-OTNNB,Optical Transport Network North B
+SSRSPACC-OTNSA,Optical Transport Network South A
+SSRSPACC-OTNSB,Optical Transport Network South B
+SSRSPACC-PFE00,Power Feed Equipment
+SSRSPACC-TS00N,Time Server North
+SSRSPACC-TS00S,Time Server South
+SSRSPACC-UPS0A,UPS-A
+SSRSPACC-UPS0B,UPS-B
