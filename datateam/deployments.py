@@ -7,7 +7,7 @@ import re
 import glob
 
 def find_deployment(db,reference_designator,deployment_number):
-  """Find a Deployment by reference_designator and deployment_number"""
+  """Find a deployment by reference_designator and deployment_number"""
   sql = 'reference_designator="%s" AND deployment_number="%s"' % (reference_designator, deployment_number)
   result = db.select('deployments',sql,'id')
   if len(result) > 0:
@@ -17,20 +17,20 @@ def find_deployment(db,reference_designator,deployment_number):
 
 
 def save_deployment(db,data):
-  """Save an Deployment to the database"""
+  """Save an deployment to the database"""
   id = find_deployment(db,data['reference_designator'],data['deployment_number'])
   if id == False:
     #data['created'] = time.strftime('%Y-%m-%d %H:%M:%S')
     res = db.insert('deployments', data)
-    print "Created Deployment: " +data['reference_designator'] +' deployment #' +str(data['deployment_number'])
+    print "Created deployment: " +data['reference_designator'] +' deployment #' +str(data['deployment_number'])
   else:
     #data['modified'] = time.strftime('%Y-%m-%d %H:%M:%S')
     res = db.update('deployments', id, data)
-    print "Updated Deployment: " +data['reference_designator'] +' deployment #' +str(data['deployment_number'])
+    print "Updated deployment: " +data['reference_designator'] +' deployment #' +str(data['deployment_number'])
 
 
 def find_cal(db,reference_designator,deployment_number,cc_name):
-  """Find an Calibration"""
+  """Find an calibration"""
   sql = 'reference_designator="%s" AND deployment_number="%s" AND cc_name="%s"' % (reference_designator, deployment_number, cc_name)
   result = db.select('calibrations',sql,'id')
   if len(result) > 0:
@@ -40,7 +40,7 @@ def find_cal(db,reference_designator,deployment_number,cc_name):
 
 
 def save_cal(db,data):
-  """Save an Calibration to the database"""
+  """Save an calibration to the database"""
   id = find_cal(db,data['reference_designator'],data['deployment_number'],data['cc_name'])
   if id == False:
     #data['created'] = time.strftime('%Y-%m-%d %H:%M:%S')
@@ -52,8 +52,18 @@ def save_cal(db,data):
     print "Updated calibration: " +data['reference_designator'] +' deployment #' +str(data['deployment_number']) +' ' +data['cc_name']
 
 
+def get_deployment(db,reference_designator,deployment_number):
+  """Get a deployment by reference_designator and deployment_number"""
+  sql = 'reference_designator="%s" AND deployment_number="%s"' % (reference_designator,deployment_number)
+  result = db.select('deployments',sql)
+  if len(result) > 0:
+    return result[0]
+  else:
+    return False
+
+
 def get_deployment_by_barcode(db,mooring_barcode,deployment_number):
-  """Get a Deployment by id"""
+  """Get a deployment by mooring_barcode and deployment_number"""
   sql = 'mooring_barcode="%s" AND deployment_number="%s"' % (mooring_barcode,deployment_number)
   result = db.select('deployments',sql)
   if len(result) > 0:
@@ -98,8 +108,11 @@ def load(db):
             d = moor_dict['ref_des']+'-'+str(moor_dict['deployment_number'])
             moor_dict = clean_mooring_data(moor_dict)  # Create valid data types for mysql db
             #print moor_dict
+            print "SAVING PARENT DEPLOYMENT"
             save_deployment(db,moor_dict)
             deployments.append(d)
+    else:
+      print "ERROR - Moorings worksheet not found"
 
     if set(['Asset_Cal_Info']).issubset(wb.get_sheet_names()):
       m_data = crawl_worksheet(wb['Asset_Cal_Info'])
@@ -113,16 +126,30 @@ def load(db):
           cal_dict = dict(zip(cal_header, row))  # Zip the headers and data rows into a dictionary
     
           if cal_dict['ref_des'] and cal_dict['deployment_number'] and cal_dict['ref_des'][0] != '#':
-            d = cal_dict['ref_des']+'-'+str(cal_dict['deployment_number'])
+            if cal_dict['ref_des'][9:11] == 'GL':
+              p_ref = cal_dict['ref_des'][:14]
+            elif cal_dict['ref_des'][9:11] == 'PG':
+              p_ref = cal_dict['ref_des'][:14]
+            elif cal_dict['ref_des'][:2] == 'RS':
+              p_ref = cal_dict['ref_des'][:14]
+            else:
+              p_ref = cal_dict['ref_des'][:8]
+            d = cal_dict['ref_des'] +'-' +str(cal_dict['deployment_number'])
             if d not in deployments:
-              mooring = get_deployment_by_barcode(db,cal_dict['mooring_ooibarcode'],cal_dict['deployment_number']) # Get parent moooring
+              #mooring = get_deployment_by_barcode(db,cal_dict['mooring_ooibarcode'],cal_dict['deployment_number']) # Get parent moooring
+              mooring = get_deployment(db,p_ref,cal_dict['deployment_number']) # Get parent moooring
               if mooring:
                 mooring['reference_designator'] = cal_dict['ref_des'] # Override values
                 mooring.pop('id')
+                print "SAVING CHILD DEPLOYMENT"
                 save_deployment(db,mooring) # Save deployment
+              else:
+                print "ERROR - Parent mooring not found " +p_ref +' #' +str(cal_dict['deployment_number']) +'   ' +cal_dict['ref_des']
               deployments.append(d)
             if cal_dict['calibration_cofficient_name']:
               save_cal(db,clean_cal_data(cal_dict)) # Save calibration info
+    else:
+      print "ERROR - Asset_Cal_Info worksheet not found"
               
 
 def conversion(old):
