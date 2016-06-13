@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 19, 2016 at 02:18 PM
+-- Generation Time: Jun 13, 2016 at 08:13 PM
 -- Server version: 5.7.10
 -- PHP Version: 5.5.32
 
@@ -76,6 +76,27 @@ CREATE TABLE `calibrations` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `data_streams`
+--
+
+CREATE TABLE `data_streams` (
+  `id` int(11) NOT NULL,
+  `reference_designator` varchar(27) NOT NULL DEFAULT '',
+  `instrument_id` int(11) DEFAULT NULL,
+  `method` varchar(100) NOT NULL DEFAULT '',
+  `stream_name` varchar(100) NOT NULL DEFAULT '',
+  `stream_id` int(11) DEFAULT NULL,
+  `uframe_route` varchar(100) NOT NULL DEFAULT '',
+  `driver` varchar(100) NOT NULL DEFAULT '',
+  `parser` varchar(100) NOT NULL DEFAULT '',
+  `instrument_type` varchar(20) NOT NULL DEFAULT '',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `deployments`
 --
 
@@ -98,48 +119,14 @@ CREATE TABLE `deployments` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `designators`
---
-
-CREATE TABLE `designators` (
-  `id` int(11) NOT NULL,
-  `reference_designator` varchar(27) DEFAULT NULL,
-  `designator_type` varchar(50) DEFAULT NULL,
-  `name` varchar(75) DEFAULT NULL,
-  `description` text,
-  `type` varchar(50) DEFAULT NULL,
-  `location` varchar(45) DEFAULT NULL,
-  `start_depth` decimal(6,2) DEFAULT NULL,
-  `end_depth` decimal(6,2) DEFAULT NULL,
-  `latitude` float DEFAULT NULL,
-  `longitude` float DEFAULT NULL,
-  `parent_designator` varchar(27) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `designators_streams`
---
-
-CREATE TABLE `designators_streams` (
-  `designator_id` int(11) NOT NULL,
-  `stream_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `instruments`
 --
 
 CREATE TABLE `instruments` (
   `id` int(11) NOT NULL,
   `reference_designator` varchar(27) DEFAULT NULL,
+  `node_rd` varchar(14) NOT NULL DEFAULT '',
   `name` varchar(75) DEFAULT NULL,
-  `description` text,
   `start_depth` decimal(6,2) DEFAULT NULL,
   `end_depth` decimal(6,2) DEFAULT NULL,
   `location` varchar(45) DEFAULT NULL,
@@ -173,7 +160,8 @@ CREATE TABLE `instrument_models` (
   `id` int(11) NOT NULL,
   `class` varchar(5) NOT NULL DEFAULT '',
   `series` varchar(2) NOT NULL DEFAULT '',
-  `manufacturer` varchar(50) NOT NULL DEFAULT '',
+  `name` varchar(75) NOT NULL,
+  `make` varchar(50) NOT NULL DEFAULT '',
   `model` varchar(75) NOT NULL DEFAULT '',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
@@ -188,12 +176,8 @@ CREATE TABLE `instrument_models` (
 CREATE TABLE `nodes` (
   `id` int(11) NOT NULL,
   `reference_designator` varchar(14) NOT NULL DEFAULT '',
+  `site_rd` varchar(8) NOT NULL DEFAULT '',
   `name` varchar(75) NOT NULL DEFAULT '',
-  `type` varchar(50) NOT NULL DEFAULT '',
-  `description` text,
-  `latitude` float DEFAULT NULL,
-  `longitude` float DEFAULT NULL,
-  `bottom_depth` float DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -206,12 +190,12 @@ CREATE TABLE `nodes` (
 
 CREATE TABLE `parameters` (
   `id` int(11) UNSIGNED NOT NULL,
-  `name` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
-  `unit` varchar(30) COLLATE utf8_swedish_ci DEFAULT NULL,
+  `name` varchar(250) CHARACTER SET latin1 DEFAULT NULL,
+  `unit` varchar(250) COLLATE utf8_swedish_ci DEFAULT NULL,
   `fill_value` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
   `display_name` varchar(250) COLLATE utf8_swedish_ci DEFAULT NULL,
-  `standard_name` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
-  `precision` varchar(10) CHARACTER SET latin1 DEFAULT NULL,
+  `standard_name` varchar(250) CHARACTER SET latin1 DEFAULT NULL,
+  `parameter_precision` varchar(10) COLLATE utf8_swedish_ci DEFAULT NULL,
   `parameter_function_id` varchar(250) CHARACTER SET latin1 DEFAULT NULL,
   `parameter_function_map` text CHARACTER SET latin1,
   `data_product_identifier` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
@@ -248,19 +232,16 @@ CREATE TABLE `parameter_functions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `platforms`
+-- Table structure for table `regions`
 --
 
-CREATE TABLE `platforms` (
+CREATE TABLE `regions` (
   `id` int(11) NOT NULL,
-  `reference_designator` varchar(11) NOT NULL DEFAULT '',
+  `reference_designator` varchar(2) NOT NULL DEFAULT '',
   `name` varchar(75) NOT NULL DEFAULT '',
-  `type` varchar(50) NOT NULL DEFAULT '',
   `description` text,
   `latitude` float DEFAULT NULL,
   `longitude` float DEFAULT NULL,
-  `bottom_depth` float DEFAULT NULL,
-  `location` varchar(45) NOT NULL DEFAULT '',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -273,10 +254,14 @@ CREATE TABLE `platforms` (
 
 CREATE TABLE `sites` (
   `id` int(11) NOT NULL,
-  `reference_designator` varchar(2) NOT NULL DEFAULT '',
+  `reference_designator` varchar(8) NOT NULL DEFAULT '',
+  `region_rd` varchar(2) NOT NULL DEFAULT '',
+  `array_name` varchar(75) DEFAULT NULL,
   `name` varchar(75) NOT NULL DEFAULT '',
+  `description` text,
   `latitude` float DEFAULT NULL,
   `longitude` float DEFAULT NULL,
+  `bottom_depth` float DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -289,7 +274,7 @@ CREATE TABLE `sites` (
 
 CREATE TABLE `streams` (
   `id` int(11) UNSIGNED NOT NULL,
-  `name` varchar(100) DEFAULT NULL,
+  `name` varchar(250) DEFAULT NULL,
   `time_parameter` int(11) DEFAULT NULL,
   `uses_ctd` tinyint(1) DEFAULT NULL,
   `binsize_minutes` int(11) DEFAULT NULL
@@ -313,23 +298,17 @@ ALTER TABLE `calibrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `data_streams`
+--
+ALTER TABLE `data_streams`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `reference_designator` (`reference_designator`,`method`,`stream_name`);
+
+--
 -- Indexes for table `deployments`
 --
 ALTER TABLE `deployments`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `designators`
---
-ALTER TABLE `designators`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `reference_designator` (`reference_designator`);
-
---
--- Indexes for table `designators_streams`
---
-ALTER TABLE `designators_streams`
-  ADD PRIMARY KEY (`designator_id`,`stream_id`);
 
 --
 -- Indexes for table `instruments`
@@ -378,9 +357,9 @@ ALTER TABLE `parameter_functions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `platforms`
+-- Indexes for table `regions`
 --
-ALTER TABLE `platforms`
+ALTER TABLE `regions`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `reference_designator` (`reference_designator`);
 
@@ -413,15 +392,15 @@ ALTER TABLE `assets`
 ALTER TABLE `calibrations`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `data_streams`
+--
+ALTER TABLE `data_streams`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `deployments`
 --
 ALTER TABLE `deployments`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `designators`
---
-ALTER TABLE `designators`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `instruments`
 --
@@ -453,9 +432,9 @@ ALTER TABLE `parameters`
 ALTER TABLE `parameter_functions`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `platforms`
+-- AUTO_INCREMENT for table `regions`
 --
-ALTER TABLE `platforms`
+ALTER TABLE `regions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `sites`
