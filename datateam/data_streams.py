@@ -23,13 +23,13 @@ def load(db):
     reader = csv.DictReader(csvfile)
     for row in reader:
       row['instrument_id'] = find(db,'instruments','reference_designator',row['reference_designator'])
-      row['stream_id'] = find(db,'streams','name',row['stream'])
+      row['stream_id'] = find(db,'streams','name',row['stream_name'])
 
       if (row['instrument_id'] == False):
         print 'Instrument Not found: ' + row['reference_designator']
       if (row['stream_id'] == False):
-        print 'Stream Not found: ' + row['stream']
+        print 'Stream Not found: ' + row['stream_name']
       if (row['instrument_id'] and row['stream_id']):
         res = db.insert('data_streams', row)
-        print "Loaded: " +row['reference_designator'] +' ' +row['stream'] +' ' +row['method']
+        print "Loaded: " +row['reference_designator'] +' ' +row['stream_name'] +' ' +row['method']
   print "Data Streams Loaded"

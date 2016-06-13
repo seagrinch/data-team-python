@@ -40,22 +40,22 @@ def load_regions(db):
 
 def load_sites(db):
   """Load Sites into the database"""
-  columns = ['reference_designator', 'region', 'array_name', 'name', 'description', 'bottom_depth', 'longitude', 'latitude']
+  columns = ['reference_designator', 'region_rd', 'array_name', 'name', 'description', 'bottom_depth', 'longitude', 'latitude']
   with open("infrastructure/sites.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-      row['region'] = row['reference_designator'][:2]
+      row['region_rd'] = row['reference_designator'][:2]
       save(db, 'sites', row, columns)
 
 
 def load_nodes(db):
   """Load Nodes into the database"""
-  columns = ['reference_designator', 'region', 'site', 'name']
+  columns = ['reference_designator', 'region_rd', 'site_rd', 'name']
   with open("infrastructure/nodes.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-      row['region'] = row['reference_designator'][:2]
-      row['site'] = row['reference_designator'][:8]
+      #row['region_rd'] = row['reference_designator'][:2]
+      row['site_rd'] = row['reference_designator'][:8]
       save(db, 'nodes', row, columns)
 
 
@@ -71,13 +71,13 @@ def load_instruments(db):
       vocab[row['class']] = row['name']
 
   # Save the Instrument
-  columns = ['reference_designator', 'region', 'site', 'node', 'name', 'start_depth', 'end_depth', 'location']
+  columns = ['reference_designator', 'region_rd', 'site_rd', 'node_rd', 'name', 'start_depth', 'end_depth', 'location']
   with open("infrastructure/instruments.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-      row['region'] = row['reference_designator'][:2]
-      row['site'] = row['reference_designator'][:8]
-      row['node'] = row['reference_designator'][:14]
+      #row['region_rd'] = row['reference_designator'][:2]
+      #row['site_rd'] = row['reference_designator'][:8]
+      row['node_rd'] = row['reference_designator'][:14]
       row['name'] = find_vocab(vocab, row['reference_designator'][18:23])
       save(db, 'instruments', row, columns)
 

@@ -1,4 +1,4 @@
-reference_designator,method,stream,uframe_route,driver,parser,instrument_type
+reference_designator,method,stream_name,uframe_route,driver,parser,instrument_type
 CE01ISSM-MFC31-00-CPMENG000,telemetered,cg_cpm_eng_cpm,Ingest.cg-cpm-eng-cpm_telemetered,cg_cpm_eng_cpm_telemetered_driver,cg_cpm_eng_cpm,Engineering
 CE01ISSM-MFC31-00-CPMENG000,recovered_host,cg_cpm_eng_cpm_recovered,Ingest.cg-cpm-eng-cpm_recovered,cg_cpm_eng_cpm_recovered_driver,cg_cpm_eng_cpm,Engineering
 CE01ISSM-MFD35-00-DCLENG000,telemetered,cg_dcl_eng_dcl_cpu_uptime,Ingest.cg-dcl-eng-dcl_telemetered,cg_dcl_eng_dcl_telemetered_driver,cg_dcl_eng_dcl,Engineering
