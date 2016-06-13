@@ -27,7 +27,7 @@ def load(db):
 
       if (row['instrument_id'] == False):
         print 'Instrument Not found: ' + row['reference_designator']
-      if (row['stream_id'] == False):
+      if (row['stream_id'] == False and row['stream_name']):
         print 'Stream Not found: ' + row['stream_name']
       if (row['instrument_id'] and row['stream_id']):
         res = db.insert('data_streams', row)
