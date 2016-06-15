@@ -131,6 +131,16 @@ def load_streams(db):
     data['binsize_minutes'] = row['binsize_minutes']
     
     save(db,'streams',data)
+
+  # Manual additions
+  extras = [
+    {'id':'9901','name':'camds_video'},
+    {'id':'9902','name':'iris'},
+    {'id':'9903','name':'ppsdn_status'},
+    {'id':'9904','name':'rasfl_status'},
+  ]
+  for row in extras:
+    save(db,'streams',row)
     
   print "Step 3 - Streams Loaded"
 
