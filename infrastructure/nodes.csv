@@ -20,7 +20,7 @@ CE04OSBP-LV01C,Low-Power JBox (LJ0CI)
 CE04OSPD-DP01B,Wire-Following Profiler (DP01B)
 CE04OSPD-PD01B,Profiler Docking Station (PD01B)
 CE04OSPS-PC01B,200m Platform (PC01B)
-CE04OSPS-SF01B,Winched Profiler (SF01B)
+CE04OSPS-SF01B,Shallow Profiler (SF01B)
 CE04OSSM-RIC21,Near Surface Instrument Frame
 CE04OSSM-RID26,Near Surface Instrument Frame
 CE04OSSM-RID27,Near Surface Instrument Frame
@@ -78,16 +78,16 @@ CP01CNSM-SBC11,Surface Buoy
 CP01CNSM-SBD11,Surface Buoy
 CP01CNSM-SBD12,Surface Buoy
 CP01CNSP-SP001,Surface Piercing Profiler
-CP02PMCI-RII01,Mooring Line
+CP02PMCI-RII01,Mooring Riser
 CP02PMCI-SBS01,Surface Buoy
 CP02PMCI-WFP01,Wire-Following Profiler
-CP02PMCO-RII01,Mooring Line
+CP02PMCO-RII01,Mooring Riser
 CP02PMCO-SBS01,Surface Buoy
 CP02PMCO-WFP01,Wire-Following Profiler
-CP02PMUI-RII01,Mooring Line
+CP02PMUI-RII01,Mooring Riser
 CP02PMUI-SBS01,Surface Buoy
 CP02PMUI-WFP01,Wire-Following Profiler
-CP02PMUO-RII01,Mooring Line
+CP02PMUO-RII01,Mooring Riser
 CP02PMUO-SBS01,Surface Buoy
 CP02PMUO-WFP01,Wire-Following Profiler
 CP03ISSM-MFC31,Seafloor Multi-Function Node (MFN)
@@ -126,18 +126,18 @@ CP05MOAS-GL387,Coastal Glider 387
 CP05MOAS-GL388,Coastal Glider 388
 CP05MOAS-GL389,Coastal Glider 389
 GA01SUMO-RID16,Near Surface Instrument Frame
-GA01SUMO-RII11,Mooring Line
+GA01SUMO-RII11,Mooring Riser
 GA01SUMO-SBC11,Surface Buoy
 GA01SUMO-SBD11,Surface Buoy
 GA01SUMO-SBD12,Surface Buoy
-GA02HYPM-MPM01,Mooring Line
-GA02HYPM-RIM01,Mooring Line
+GA02HYPM-MPM01,Mooring Riser
+GA02HYPM-RIM01,Mooring Riser
 GA02HYPM-WFP02,Wire-Following Profiler Upper
 GA02HYPM-WFP03,Wire-Following Profiler Lower
-GA03FLMA-RIM01,Mooring Line
-GA03FLMA-RIS01,Mooring Line
-GA03FLMB-RIM01,Mooring Line
-GA03FLMB-RIS01,Mooring Line
+GA03FLMA-RIM01,Mooring Riser
+GA03FLMA-RIS01,Mooring Riser
+GA03FLMB-RIM01,Mooring Riser
+GA03FLMB-RIS01,Mooring Riser
 GA05MOAS-GL493,Open Ocean Glider 493
 GA05MOAS-GL494,Open Ocean Glider 494
 GA05MOAS-GL495,Open Ocean Glider 495
@@ -147,19 +147,19 @@ GA05MOAS-GL563,Open Ocean Glider 563
 GA05MOAS-PG562,Global Profiling Glider 562
 GA05MOAS-PG563,Global Profiling Glider 563
 GI01SUMO-RID16,Near Surface Instrument Frame
-GI01SUMO-RII11,Mooring Line
+GI01SUMO-RII11,Mooring Riser
 GI01SUMO-SBC11,Surface Buoy
 GI01SUMO-SBD11,Surface Buoy
 GI01SUMO-SBD12,Surface Buoy
-GI02HYPM-MPM01,Mooring Line
-GI02HYPM-RIM01,Mooring Line
+GI02HYPM-MPM01,Mooring Riser
+GI02HYPM-RIM01,Mooring Riser
 GI02HYPM-WFP02,Wire-Following Profiler Upper
-GI03FLMA-RI000,Mooring Line
-GI03FLMA-RIM01,Mooring Line
-GI03FLMA-RIS01,Mooring Line
-GI03FLMB-RI000,Mooring Line
-GI03FLMB-RIM01,Mooring Line
-GI03FLMB-RIS01,Mooring Line
+GI03FLMA-RI000,Mooring Riser
+GI03FLMA-RIM01,Mooring Riser
+GI03FLMA-RIS01,Mooring Riser
+GI03FLMB-RI000,Mooring Riser
+GI03FLMB-RIM01,Mooring Riser
+GI03FLMB-RIS01,Mooring Riser
 GI05MOAS-GL469,Open Ocean Glider 469
 GI05MOAS-GL477,Open Ocean Glider 477
 GI05MOAS-GL478,Open Ocean Glider 478
@@ -167,14 +167,14 @@ GI05MOAS-GL484,Open Ocean Glider 484
 GI05MOAS-GL485,Open Ocean Glider 485
 GI05MOAS-GL495,Open Ocean Glider 495
 GI05MOAS-PG528,Global Profiling Glider 528
-GP02HYPM-MPM01,Mooring Line
-GP02HYPM-RIM01,Mooring Line
+GP02HYPM-MPM01,Mooring Riser
+GP02HYPM-RIM01,Mooring Riser
 GP02HYPM-WFP02,Wire-Following Profiler Upper
 GP02HYPM-WFP03,Wire-Following Profiler Lower
-GP03FLMA-RIM01,Mooring Line
-GP03FLMA-RIS01,Mooring Line
-GP03FLMB-RIM01,Mooring Line
-GP03FLMB-RIS01,Mooring Line
+GP03FLMA-RIM01,Mooring Riser
+GP03FLMA-RIS01,Mooring Riser
+GP03FLMB-RIM01,Mooring Riser
+GP03FLMB-RIS01,Mooring Riser
 GP05MOAS-GL276,Open Ocean Glider 276
 GP05MOAS-GL361,Open Ocean Glider 361
 GP05MOAS-GL362,Open Ocean Glider 362
@@ -188,18 +188,18 @@ GP05MOAS-GL537,Open Ocean Glider 537
 GP05MOAS-PG514,Global Profiling Glider 514
 GP05MOAS-PG515,Global Profiling Glider 515
 GS01SUMO-RID16,Near Surface Instrument Frame
-GS01SUMO-RII11,Mooring Line
+GS01SUMO-RII11,Mooring Riser
 GS01SUMO-SBC11,Surface Buoy
 GS01SUMO-SBD11,Surface Buoy
 GS01SUMO-SBD12,Surface Buoy
-GS02HYPM-MPM01,Mooring Line
-GS02HYPM-RIM01,Mooring Line
+GS02HYPM-MPM01,Mooring Riser
+GS02HYPM-RIM01,Mooring Riser
 GS02HYPM-WFP02,Wire-Following Profiler Upper
 GS02HYPM-WFP03,Wire-Following Profiler Lower
-GS03FLMA-RIM01,Mooring Line
-GS03FLMA-RIS01,Mooring Line
-GS03FLMB-RIM01,Mooring Line
-GS03FLMB-RIS01,Mooring Line
+GS03FLMA-RIM01,Mooring Riser
+GS03FLMA-RIS01,Mooring Riser
+GS03FLMB-RIM01,Mooring Riser
+GS03FLMB-RIS01,Mooring Riser
 GS05MOAS-GL484,Open Ocean Glider 484
 GS05MOAS-GL485,Open Ocean Glider 485
 GS05MOAS-GL486,Open Ocean Glider 486
@@ -212,7 +212,7 @@ RS01SBPD-DP01A,Wire-Following Profiler (DP01A)
 RS01SBPS-LV01A,Low-Voltage Node (LV01A)
 RS01SBPS-PC01A,200m Platform (PC01A)
 RS01SBPS-SC01A,Winch Controller (SC01A)
-RS01SBPS-SF01A,Winched Profiler (SF01A)
+RS01SBPS-SF01A,Shallow Profiler (SF01A)
 RS01SHDR-PN01B,Primary Node (PN01B)
 RS01SLBS-LJ01A,Low-Power JBox (LJ01A)
 RS01SLBS-MJ01A,Medium-Power JBox (MJ01A)
@@ -230,7 +230,7 @@ RS03AXPD-PD03A,Profiler Docking Station (PD03A)
 RS03AXPS-LV03A,Low-Voltage Node (LV03A)
 RS03AXPS-PC03A,200m Platform (PC03A)
 RS03AXPS-SC03A,Winch Controller (SC03A)
-RS03AXPS-SF03A,Winched Profiler (SF03A)
+RS03AXPS-SF03A,Shallow Profiler (SF03A)
 RS03AXSM-PN03B,Primary Node (PN03B)
 RS03CCAL-MJ03F,Medium-Power JBox (MJ03F)
 RS03ECAL-MJ03E,Medium-Power JBox (MJ03E)
