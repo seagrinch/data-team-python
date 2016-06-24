@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 13, 2016 at 08:13 PM
+-- Generation Time: Jun 24, 2016 at 02:59 PM
 -- Server version: 5.7.10
 -- PHP Version: 5.5.32
 
@@ -80,7 +80,7 @@ CREATE TABLE `calibrations` (
 --
 
 CREATE TABLE `data_streams` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `reference_designator` varchar(27) NOT NULL DEFAULT '',
   `instrument_id` int(11) DEFAULT NULL,
   `method` varchar(100) NOT NULL DEFAULT '',
@@ -123,13 +123,15 @@ CREATE TABLE `deployments` (
 --
 
 CREATE TABLE `instruments` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `reference_designator` varchar(27) DEFAULT NULL,
   `node_rd` varchar(14) NOT NULL DEFAULT '',
   `name` varchar(75) DEFAULT NULL,
   `start_depth` decimal(6,2) DEFAULT NULL,
   `end_depth` decimal(6,2) DEFAULT NULL,
   `location` varchar(45) DEFAULT NULL,
+  `current_status` varchar(10) DEFAULT NULL,
+  `uframe_status` varchar(10) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -141,7 +143,7 @@ CREATE TABLE `instruments` (
 --
 
 CREATE TABLE `instrument_classes` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `class` varchar(5) NOT NULL DEFAULT '',
   `name` varchar(75) NOT NULL DEFAULT '',
   `description` text,
@@ -157,7 +159,7 @@ CREATE TABLE `instrument_classes` (
 --
 
 CREATE TABLE `instrument_models` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `class` varchar(5) NOT NULL DEFAULT '',
   `series` varchar(2) NOT NULL DEFAULT '',
   `name` varchar(75) NOT NULL,
@@ -170,14 +172,54 @@ CREATE TABLE `instrument_models` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `monthly_stats`
+--
+
+CREATE TABLE `monthly_stats` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `reference_designator` varchar(27) DEFAULT NULL,
+  `month` date DEFAULT NULL,
+  `uframe_status` tinyint(1) DEFAULT NULL,
+  `deployed_status` varchar(10) DEFAULT NULL,
+  `casandra_status` tinyint(1) DEFAULT NULL,
+  `reviewed_status` varchar(10) DEFAULT NULL,
+  `reviewed_user_id` int(11) DEFAULT NULL,
+  `reviewed_comment` text,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `nodes`
 --
 
 CREATE TABLE `nodes` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `reference_designator` varchar(14) NOT NULL DEFAULT '',
   `site_rd` varchar(8) NOT NULL DEFAULT '',
   `name` varchar(75) NOT NULL DEFAULT '',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notes`
+--
+
+CREATE TABLE `notes` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `body` text,
+  `type` varchar(10) DEFAULT NULL,
+  `model` varchar(20) DEFAULT NULL,
+  `reference_designator` varchar(30) DEFAULT NULL,
+  `redmine_issue` varchar(20) DEFAULT NULL,
+  `resolved` date DEFAULT NULL,
+  `resolved_comment` text,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -209,8 +251,8 @@ CREATE TABLE `parameters` (
 --
 
 CREATE TABLE `parameters_streams` (
-  `parameter_id` int(11) NOT NULL,
-  `stream_id` int(11) NOT NULL
+  `parameter_id` int(11) UNSIGNED NOT NULL,
+  `stream_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -236,7 +278,7 @@ CREATE TABLE `parameter_functions` (
 --
 
 CREATE TABLE `regions` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `reference_designator` varchar(2) NOT NULL DEFAULT '',
   `name` varchar(75) NOT NULL DEFAULT '',
   `description` text,
@@ -253,7 +295,7 @@ CREATE TABLE `regions` (
 --
 
 CREATE TABLE `sites` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `reference_designator` varchar(8) NOT NULL DEFAULT '',
   `region_rd` varchar(2) NOT NULL DEFAULT '',
   `array_name` varchar(75) DEFAULT NULL,
@@ -262,6 +304,7 @@ CREATE TABLE `sites` (
   `latitude` float DEFAULT NULL,
   `longitude` float DEFAULT NULL,
   `bottom_depth` float DEFAULT NULL,
+  `current_status` varchar(10) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -278,6 +321,26 @@ CREATE TABLE `streams` (
   `time_parameter` int(11) DEFAULT NULL,
   `uses_ctd` tinyint(1) DEFAULT NULL,
   `binsize_minutes` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL,
+  `first_name` varchar(20) DEFAULT NULL,
+  `last_name` varchar(20) DEFAULT NULL,
+  `role` varchar(20) DEFAULT NULL,
+  `token` varchar(40) DEFAULT NULL,
+  `token_expires` datetime DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -332,11 +395,24 @@ ALTER TABLE `instrument_models`
   ADD UNIQUE KEY `class_series` (`class`,`series`) USING BTREE;
 
 --
+-- Indexes for table `monthly_stats`
+--
+ALTER TABLE `monthly_stats`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `reference_designator_month` (`reference_designator`,`month`) USING BTREE;
+
+--
 -- Indexes for table `nodes`
 --
 ALTER TABLE `nodes`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `reference_designator` (`reference_designator`);
+
+--
+-- Indexes for table `notes`
+--
+ALTER TABLE `notes`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `parameters`
@@ -378,6 +454,14 @@ ALTER TABLE `streams`
   ADD UNIQUE KEY `name` (`name`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -395,7 +479,7 @@ ALTER TABLE `calibrations`
 -- AUTO_INCREMENT for table `data_streams`
 --
 ALTER TABLE `data_streams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `deployments`
 --
@@ -405,22 +489,32 @@ ALTER TABLE `deployments`
 -- AUTO_INCREMENT for table `instruments`
 --
 ALTER TABLE `instruments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `instrument_classes`
 --
 ALTER TABLE `instrument_classes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `instrument_models`
 --
 ALTER TABLE `instrument_models`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `monthly_stats`
+--
+ALTER TABLE `monthly_stats`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `nodes`
 --
 ALTER TABLE `nodes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `notes`
+--
+ALTER TABLE `notes`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `parameters`
 --
@@ -435,17 +529,22 @@ ALTER TABLE `parameter_functions`
 -- AUTO_INCREMENT for table `regions`
 --
 ALTER TABLE `regions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `sites`
 --
 ALTER TABLE `sites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `streams`
 --
 ALTER TABLE `streams`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
