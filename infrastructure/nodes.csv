@@ -210,6 +210,7 @@ GS05MOAS-GL561,Open Ocean Glider 561,,
 GS05MOAS-PG565,Global Profiling Glider 565,,
 GS05MOAS-PG566,Global Profiling Glider 566,,
 RS01SBPD-DP01A,Wire-Following Profiler (DP01A),200,2905
+RS01SBPD-PD01A,Profiler Docking Station (PD01A),2905,2905
 RS01SBPS-LV01A,Low-Voltage Node (LV01A),2905,2905
 RS01SBPS-PC01A,200m Platform (PC01A),200,200
 RS01SBPS-SC01A,Winch Controller (SC01A),200,200
