@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 24, 2016 at 02:59 PM
+-- Generation Time: Jun 29, 2016 at 07:07 PM
 -- Server version: 5.7.10
 -- PHP Version: 5.5.32
 
@@ -125,7 +125,7 @@ CREATE TABLE `deployments` (
 CREATE TABLE `instruments` (
   `id` int(11) UNSIGNED NOT NULL,
   `reference_designator` varchar(27) DEFAULT NULL,
-  `node_rd` varchar(14) NOT NULL DEFAULT '',
+  `parent_node` varchar(14) NOT NULL DEFAULT '',
   `name` varchar(75) DEFAULT NULL,
   `start_depth` decimal(6,2) DEFAULT NULL,
   `end_depth` decimal(6,2) DEFAULT NULL,
@@ -198,7 +198,7 @@ CREATE TABLE `monthly_stats` (
 CREATE TABLE `nodes` (
   `id` int(11) UNSIGNED NOT NULL,
   `reference_designator` varchar(14) NOT NULL DEFAULT '',
-  `site_rd` varchar(8) NOT NULL DEFAULT '',
+  `parent_site` varchar(8) NOT NULL DEFAULT '',
   `name` varchar(75) NOT NULL DEFAULT '',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
@@ -213,12 +213,14 @@ CREATE TABLE `nodes` (
 CREATE TABLE `notes` (
   `id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `body` text,
+  `comment` text,
   `type` varchar(10) DEFAULT NULL,
   `model` varchar(20) DEFAULT NULL,
   `reference_designator` varchar(30) DEFAULT NULL,
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
   `redmine_issue` varchar(20) DEFAULT NULL,
-  `resolved` date DEFAULT NULL,
+  `resolved_date` date DEFAULT NULL,
   `resolved_comment` text,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
@@ -297,13 +299,14 @@ CREATE TABLE `regions` (
 CREATE TABLE `sites` (
   `id` int(11) UNSIGNED NOT NULL,
   `reference_designator` varchar(8) NOT NULL DEFAULT '',
-  `region_rd` varchar(2) NOT NULL DEFAULT '',
+  `parent_region` varchar(2) NOT NULL DEFAULT '',
   `array_name` varchar(75) DEFAULT NULL,
   `name` varchar(75) NOT NULL DEFAULT '',
   `description` text,
+  `min_depth` float DEFAULT NULL,
+  `max_depth` float DEFAULT NULL,
   `latitude` float DEFAULT NULL,
   `longitude` float DEFAULT NULL,
-  `bottom_depth` float DEFAULT NULL,
   `current_status` varchar(10) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
@@ -320,7 +323,10 @@ CREATE TABLE `streams` (
   `name` varchar(250) DEFAULT NULL,
   `time_parameter` int(11) DEFAULT NULL,
   `uses_ctd` tinyint(1) DEFAULT NULL,
-  `binsize_minutes` int(11) DEFAULT NULL
+  `binsize_minutes` int(11) DEFAULT NULL,
+  `stream_type` varchar(20) DEFAULT NULL,
+  `display_name` varchar(100) DEFAULT NULL,
+  `description` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
