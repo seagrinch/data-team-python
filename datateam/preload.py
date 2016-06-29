@@ -2,11 +2,21 @@
 import sqlite3
 import csv
 import time
-#from .common import *
+from .common import *
 
 def find(db,table,id):
   """Find an id in a table"""
   sql = 'id="%s"' % (id)
+  result = db.select(table,sql,'id')
+  if len(result) > 0:
+    return result[0]['id']
+  else:
+    return False
+
+
+def find_id_by_name(db,table,name):
+  """Find an record by name"""
+  sql = 'name="%s"' % (name)
   result = db.select(table,sql,'id')
   if len(result) > 0:
     return result[0]['id']
@@ -35,10 +45,16 @@ def load(db):
   load_parameter_functions(db)
   load_streams(db)
   load_parameters_streams(db)
+  load_stream_descriptions(db)
 
 
 def load_parameters(db):
   """Load Parameters into the database"""
+
+  # Truncate table
+  r = db.truncate_table('parameters')
+  print "Truncated parameters table - Rows deleted: " +str(r)
+
   conn = sqlite3.connect('repos/preload-database/preload.db')
   conn.row_factory = sqlite3.Row
   c = conn.cursor()
@@ -83,6 +99,11 @@ def load_parameters(db):
 
 def load_parameter_functions(db):
   """Load Parameter Functions into the database"""
+
+  # Truncate table
+  r = db.truncate_table('parameter_functions')
+  print "Truncated parameter_functions table - Rows deleted: " +str(r)
+
   conn = sqlite3.connect('repos/preload-database/preload.db')
   conn.row_factory = sqlite3.Row
   c = conn.cursor()
@@ -115,6 +136,11 @@ def load_parameter_functions(db):
 
 def load_streams(db):
   """Load Streams into the database"""
+
+  # Truncate table
+  r = db.truncate_table('streams')
+  print "Truncated streams table - Rows deleted: " +str(r)
+
   conn = sqlite3.connect('repos/preload-database/preload.db')
   conn.row_factory = sqlite3.Row
   c = conn.cursor()
@@ -147,9 +173,10 @@ def load_streams(db):
     
 def load_parameters_streams(db):
   """Load Parameter/Stream linking table into the database"""
-  # Truncate join table
+  
+  # Truncate table
   r = db.truncate_table('parameters_streams')
-  print "Truncated table - Rows deleted: " +str(r)
+  print "Truncated parameters_streams table - Rows deleted: " +str(r)
 
   conn = sqlite3.connect('repos/preload-database/preload.db')
   conn.row_factory = sqlite3.Row
@@ -166,3 +193,17 @@ def load_parameters_streams(db):
     #print "Saved: " +str(data['stream_id']) + '-' +str(data['parameter_id'])
     
   print "Step 4 - Parameter-Stream Joins Loaded"
+
+
+def load_stream_descriptions(db):
+  """Load Custom Stream Names and Descriptions into the database"""
+  columns = ['name', 'stream_type', 'display_name', 'description']
+  with open("infrastructure/stream_descriptions.csv", 'rb') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+      if row['status'] == 'active':
+        data = remove_extraneous_columns(columns, row)
+        data['id'] = find_id_by_name(db,'streams',row['name'])
+        save(db, 'streams', data)
+
+  print "Step 5 - Custom Streams Names and Descriptions Loaded"
