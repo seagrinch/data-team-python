@@ -92,7 +92,7 @@ def load(db):
   
   for xlfile in file_list:
     print "Processing... " +xlfile
-    wb = xl.load_workbook(filename=xlfile, read_only=True)
+    wb = xl.load_workbook(filename=xlfile, read_only=True, data_only=True)
   
     if set(['Moorings']).issubset(wb.get_sheet_names()):
       m_data = crawl_worksheet(wb['Moorings'])
