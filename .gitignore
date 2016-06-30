@@ -1,4 +1,4 @@
 *.pyc
-datateam/config.py
 repos/
 log.txt
+config.cfg

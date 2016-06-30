@@ -50,13 +50,16 @@ class MysqlPython(object):
     self.__connection.close()
 
 
-  def load_config(self):
-    from config import ts_config
-    self.__host     = ts_config['db_host']
-    self.__user     = ts_config['db_user']
-    self.__password = ts_config['db_pass']
-    self.__database = ts_config['db_dbname']
-    self.__socket   = ts_config['db_socket']
+  def load_config(self, server):
+    import ConfigParser
+    config = ConfigParser.ConfigParser()
+    config.readfp(open('config.cfg'))
+    self.__host     = config.get(server,'hostname')
+    self.__user     = config.get(server,'username')
+    self.__password = config.get(server,'password')
+    self.__database = config.get(server,'database')
+    if config.has_option(server,'socket'):
+      self.__socket   = config.get(server,'socket')
 
 
   def insert(self, table, data):

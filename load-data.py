@@ -11,13 +11,17 @@ parser.add_argument('-o','--option',
     'instrument_classes','instrument_models',
     'assets','deployments','preload','data_streams'],
   help='Type of data to load')
+parser.add_argument('-s','--server',
+  choices=['production','development'],
+  default='development',
+  help='Database server')
 args = parser.parse_args()
 
 
 def main():
   """Main function for command line execution"""
   db = datateam.MysqlPython()
-  db.load_config()
+  db.load_config(args.server)
   if args.option =="regions":
     datateam.designators.load_regions(db)
   elif args.option=="sites":
