@@ -4612,9 +4612,6 @@ GI05MOAS-PG564-04-FLORTO000,telemetered,flort_m_glider_instrument,Ingest.flort-m
 GI05MOAS-PG564-05-NUTNRM000,recovered_inst,nutnr_m_dark_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
 GI05MOAS-PG564-05-NUTNRM000,recovered_inst,nutnr_m_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
 GI05MOAS-PG564-05-NUTNRM000,telemetered,nutnr_m_glider_instrument,Ingest.nutnr-m-glider_telemetered,nutnr_m_glider_telemetered_driver,glider,Science
-GI05MOAS-PG564-05-NUTNRM000,recovered_inst,nutnr_m_dark_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
-GI05MOAS-PG564-05-NUTNRM000,recovered_inst,nutnr_m_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
-GI05MOAS-PG564-05-NUTNRM000,telemetered,nutnr_m_glider_instrument,Ingest.nutnr-m-glider_telemetered,nutnr_m_glider_telemetered_driver,glider,Science
 GI05MOAS-PG564-06-PARADM000,recovered_host,parad_m_glider_recovered,Ingest.parad-m-glider_recovered,parad_m_glider_recovered_driver,glider,Science
 GI05MOAS-PG564-06-PARADM000,telemetered,parad_m_glider_instrument,Ingest.parad-m-glider_telemetered,parad_m_glider_telemetered_driver,glider,Science
 GI05MOAS-PG577-00-ENG000000,recovered_host,glider_eng_recovered,Ingest.glider-eng-glider_recovered,glider_eng_glider_recovered_driver,glider,Engineering
@@ -4633,9 +4630,6 @@ GI05MOAS-PG577-03-FLORTM000,recovered_host,flort_m_glider_recovered,Ingest.flort
 GI05MOAS-PG577-03-FLORTM000,telemetered,flort_m_glider_instrument,Ingest.flort-m-glider_telemetered,flort_m_glider_telemetered_driver,glider,Science
 GI05MOAS-PG577-04-FLORTO000,recovered_host,flort_m_glider_recovered,Ingest.flort-m-glider_recovered,flort_m_glider_recovered_driver,glider,Science
 GI05MOAS-PG577-04-FLORTO000,telemetered,flort_m_glider_instrument,Ingest.flort-m-glider_telemetered,flort_m_glider_telemetered_driver,glider,Science
-GI05MOAS-PG577-05-NUTNRM000,recovered_inst,nutnr_m_dark_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
-GI05MOAS-PG577-05-NUTNRM000,recovered_inst,nutnr_m_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
-GI05MOAS-PG577-05-NUTNRM000,telemetered,nutnr_m_glider_instrument,Ingest.nutnr-m-glider_telemetered,nutnr_m_glider_telemetered_driver,glider,Science
 GI05MOAS-PG577-05-NUTNRM000,recovered_inst,nutnr_m_dark_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
 GI05MOAS-PG577-05-NUTNRM000,recovered_inst,nutnr_m_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
 GI05MOAS-PG577-05-NUTNRM000,telemetered,nutnr_m_glider_instrument,Ingest.nutnr-m-glider_telemetered,nutnr_m_glider_telemetered_driver,glider,Science
@@ -5083,9 +5077,6 @@ GP05MOAS-PG575-04-FLORTO000,telemetered,flort_m_glider_instrument,Ingest.flort-m
 GP05MOAS-PG575-05-NUTNRM000,recovered_inst,nutnr_m_dark_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
 GP05MOAS-PG575-05-NUTNRM000,recovered_inst,nutnr_m_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
 GP05MOAS-PG575-05-NUTNRM000,telemetered,nutnr_m_glider_instrument,Ingest.nutnr-m-glider_telemetered,nutnr_m_glider_telemetered_driver,glider,Science
-GP05MOAS-PG575-05-NUTNRM000,recovered_inst,nutnr_m_dark_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
-GP05MOAS-PG575-05-NUTNRM000,recovered_inst,nutnr_m_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
-GP05MOAS-PG575-05-NUTNRM000,telemetered,nutnr_m_glider_instrument,Ingest.nutnr-m-glider_telemetered,nutnr_m_glider_telemetered_driver,glider,Science
 GP05MOAS-PG575-06-PARADM000,recovered_host,parad_m_glider_recovered,Ingest.parad-m-glider_recovered,parad_m_glider_recovered_driver,glider,Science
 GP05MOAS-PG575-06-PARADM000,telemetered,parad_m_glider_instrument,Ingest.parad-m-glider_telemetered,parad_m_glider_telemetered_driver,glider,Science
 GP05MOAS-PG576-00-ENG000000,recovered_host,glider_eng_recovered,Ingest.glider-eng-glider_recovered,glider_eng_glider_recovered_driver,glider,Engineering
@@ -5104,9 +5095,6 @@ GP05MOAS-PG576-03-FLORTM000,recovered_host,flort_m_glider_recovered,Ingest.flort
 GP05MOAS-PG576-03-FLORTM000,telemetered,flort_m_glider_instrument,Ingest.flort-m-glider_telemetered,flort_m_glider_telemetered_driver,glider,Science
 GP05MOAS-PG576-04-FLORTO000,recovered_host,flort_m_glider_recovered,Ingest.flort-m-glider_recovered,flort_m_glider_recovered_driver,glider,Science
 GP05MOAS-PG576-04-FLORTO000,telemetered,flort_m_glider_instrument,Ingest.flort-m-glider_telemetered,flort_m_glider_telemetered_driver,glider,Science
-GP05MOAS-PG576-05-NUTNRM000,recovered_inst,nutnr_m_dark_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
-GP05MOAS-PG576-05-NUTNRM000,recovered_inst,nutnr_m_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
-GP05MOAS-PG576-05-NUTNRM000,telemetered,nutnr_m_glider_instrument,Ingest.nutnr-m-glider_telemetered,nutnr_m_glider_telemetered_driver,glider,Science
 GP05MOAS-PG576-05-NUTNRM000,recovered_inst,nutnr_m_dark_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
 GP05MOAS-PG576-05-NUTNRM000,recovered_inst,nutnr_m_instrument_recovered,Ingest.nutnr-m_recovered,nutnr_m_recovered_driver,nutnr_m,Science
 GP05MOAS-PG576-05-NUTNRM000,telemetered,nutnr_m_glider_instrument,Ingest.nutnr-m-glider_telemetered,nutnr_m_glider_telemetered_driver,glider,Science
