@@ -139,6 +139,8 @@ GA03FLMA-RIM01,Mooring Riser,30,1510
 GA03FLMA-RIS01,Mooring Riser,30,30
 GA03FLMB-RIM01,Mooring Riser,30,1500
 GA03FLMB-RIS01,Mooring Riser,30,30
+GA05MOAS-GL469,Open Ocean Glider 469,0,1000
+GA05MOAS-GL470,Open Ocean Glider 470,0,1000
 GA05MOAS-GL493,Open Ocean Glider 493,0,1000
 GA05MOAS-GL494,Open Ocean Glider 494,0,1000
 GA05MOAS-GL495,Open Ocean Glider 495,0,1000
@@ -166,8 +168,11 @@ GI05MOAS-GL477,Open Ocean Glider 477,0,1000
 GI05MOAS-GL478,Open Ocean Glider 478,,
 GI05MOAS-GL484,Open Ocean Glider 484,0,1000
 GI05MOAS-GL485,Open Ocean Glider 485,0,1000
-GI05MOAS-GL495,Open Ocean Glider 495,,
-GI05MOAS-PG528,Global Profiling Glider 528,,
+GI05MOAS-GL495,Open Ocean Glider 495,0,1000
+GI05MOAS-GL559,Open Ocean Glider 559,0,1000
+GI05MOAS-PG528,Global Profiling Glider 528,0,1000
+GI05MOAS-PG564,Global Profiling Glider 564,0,1000
+GI05MOAS-PG577,Global Profiling Glider 577,0,1000
 GP02HYPM-MPM01,Mooring Riser,150,150
 GP02HYPM-RIM01,Mooring Riser,164,4042
 GP02HYPM-WFP02,Wire-Following Profiler Upper,310,2093
@@ -186,8 +191,10 @@ GP05MOAS-GL453,Open Ocean Glider 453,0,1000
 GP05MOAS-GL523,Open Ocean Glider 523,0,1000
 GP05MOAS-GL525,Open Ocean Glider 525,0,1000
 GP05MOAS-GL537,Open Ocean Glider 537,0,1000
-GP05MOAS-PG514,Global Profiling Glider 514,,
-GP05MOAS-PG515,Global Profiling Glider 515,,
+GP05MOAS-PG514,Global Profiling Glider 514,0,1000
+GP05MOAS-PG515,Global Profiling Glider 515,0,1000
+GP05MOAS-PG575,Global Profiling Glider 575,0,1000
+GP05MOAS-PG576,Global Profiling Glider 576,0,1000
 GS01SUMO-RID16,Near Surface Instrument Frame,12,12
 GS01SUMO-RII11,Mooring Riser,20,1500
 GS01SUMO-SBC11,Surface Buoy,0,0
