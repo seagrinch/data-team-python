@@ -74,6 +74,11 @@ def get_deployment_by_barcode(db,mooring_barcode,deployment_number):
 
 def load(db):
   """Load Assets into the database"""
+  r = db.truncate_table('deployments')
+  print "Truncated deployments table - Rows deleted: " +str(r)
+  r = db.truncate_table('calibrations')
+  print "Truncated calibrations table - Rows deleted: " +str(r)
+
   deployments=[]
   file_mask = "repos/asset-management/deployment/Omaha_Cal_*.xlsx"
   file_list = glob.glob(file_mask)
