@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
+# Partially adapted from https://github.com/nestordeharo/mysql-python-class
 
 import MySQLdb, sys
 
@@ -114,6 +115,27 @@ class MysqlPython(object):
       if i < l:
         query += ","
     query += " WHERE id=%d" % index
+
+    self.__open()
+    self.__session.execute(query, values)
+    self.__connection.commit()
+    # Obtain rows affected
+    update_rows = self.__session.rowcount
+    self.__close()
+
+    return update_rows
+
+
+  def update_where(self, table, where=None, *args, **kwargs):
+    query  = "UPDATE %s SET " % table
+    keys   = kwargs.keys()
+    values = tuple(kwargs.values()) + tuple(args)
+    l = len(keys) - 1
+    for i, key in enumerate(keys):
+      query += "`"+key+"` = %s"
+      if i < l:
+        query += ","
+    query += " WHERE %s" % where
 
     self.__open()
     self.__session.execute(query, values)

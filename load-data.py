@@ -6,7 +6,7 @@ import argparse
 
 # Command Line Arguments
 parser = argparse.ArgumentParser(description='OOI Data Team Portal Importer')
-parser.add_argument('-o','--option',
+parser.add_argument('-o','--option', required=True, 
   choices=['regions', 'sites','nodes','instruments',
     'instrument_classes','instrument_models',
     'assets','deployments','preload','data_streams'],
