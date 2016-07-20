@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 29, 2016 at 07:07 PM
+-- Generation Time: Jul 20, 2016 at 07:16 PM
 -- Server version: 5.7.10
 -- PHP Version: 5.5.32
 
@@ -179,10 +179,10 @@ CREATE TABLE `monthly_stats` (
   `id` int(11) UNSIGNED NOT NULL,
   `reference_designator` varchar(27) DEFAULT NULL,
   `month` date DEFAULT NULL,
-  `uframe_status` tinyint(1) DEFAULT NULL,
-  `deployed_status` varchar(10) DEFAULT NULL,
-  `casandra_status` tinyint(1) DEFAULT NULL,
-  `reviewed_status` varchar(10) DEFAULT NULL,
+  `deployment_status` varchar(1) DEFAULT NULL,
+  `cassandra_status` varchar(1) DEFAULT NULL,
+  `operational_status` varchar(12) DEFAULT NULL,
+  `reviewed_status` varchar(12) DEFAULT NULL,
   `reviewed_user_id` int(11) DEFAULT NULL,
   `reviewed_comment` text,
   `created` datetime DEFAULT NULL,
@@ -332,6 +332,58 @@ CREATE TABLE `streams` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `test_items`
+--
+
+CREATE TABLE `test_items` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `test_plan_id` int(11) DEFAULT NULL,
+  `test_question_id` int(11) DEFAULT NULL,
+  `reference_designator` varchar(27) DEFAULT NULL,
+  `method` varchar(100) DEFAULT NULL,
+  `stream_id` int(11) DEFAULT NULL,
+  `parameter_id` int(11) DEFAULT NULL,
+  `result` varchar(10) DEFAULT NULL,
+  `result_comment` text,
+  `redmine_issue` varchar(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `test_plans`
+--
+
+CREATE TABLE `test_plans` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(250) DEFAULT '',
+  `user_id` int(11) DEFAULT NULL,
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `test_questions`
+--
+
+CREATE TABLE `test_questions` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `question` varchar(250) DEFAULT NULL,
+  `type` varchar(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -460,6 +512,24 @@ ALTER TABLE `streams`
   ADD UNIQUE KEY `name` (`name`);
 
 --
+-- Indexes for table `test_items`
+--
+ALTER TABLE `test_items`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `test_plans`
+--
+ALTER TABLE `test_plans`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `test_questions`
+--
+ALTER TABLE `test_questions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -545,6 +615,21 @@ ALTER TABLE `sites`
 -- AUTO_INCREMENT for table `streams`
 --
 ALTER TABLE `streams`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `test_items`
+--
+ALTER TABLE `test_items`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `test_plans`
+--
+ALTER TABLE `test_plans`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `test_questions`
+--
+ALTER TABLE `test_questions`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
