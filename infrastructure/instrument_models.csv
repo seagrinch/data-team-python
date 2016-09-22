@@ -12,9 +12,9 @@ ADCPT,C,Velocity Profiler (300kHz),Teledyne RDI,WorkHorse Sentinel 300khz
 ADCPT,D,Velocity Profiler (150kHz),Teledyne RDI,Workhorse Quartermaster Monitor 150kHz
 ADCPT,E,Velocity Profiler (150kHz),Teledyne RDI,Workhorse Quartermaster Monitor 150kHz
 ADCPT,F,Velocity Profiler (150kHz),Teledyne RDI,WorkHorse Sentinel 150khz
-ADCPT,G,Velocity Profiler (150kHz),Teledyne RDI,WorkHorse Sentinel150khz - inductive
+ADCPT,G,Velocity Profiler (150kHz),Teledyne RDI,WorkHorse Sentinel 150khz - inductive
 ADCPT,M,Velocity Profiler (600kHz),Teledyne RDI,WorkHorse Sentinel 600khz
-BOTPT,A,Bottom Pressure and Tilt,PMEL/Chadwick,PMELcabled BPR/Tilt
+BOTPT,A,Bottom Pressure and Tilt,PMEL/Chadwick,PMEL cabled BPR/Tilt
 CAMDS,A,Digital Still Camera,Kongsberg,Modified OE14-408
 CAMDS,B,Digital Still Camera,Kongsberg,Custom Digital Still Camera Assembly
 CAMDS,C,Digital Still Camera,Kongsberg,Custom Digital Still Camera Assembly
