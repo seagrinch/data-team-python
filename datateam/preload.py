@@ -153,7 +153,6 @@ def load_streams(db):
     data['id'] = row['id']
     data['name'] = row['name']
     data['time_parameter'] = row['time_parameter']
-    data['uses_ctd'] = row['uses_ctd']
     data['binsize_minutes'] = row['binsize_minutes']
     
     save(db,'streams',data)
