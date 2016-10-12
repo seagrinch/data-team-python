@@ -39,17 +39,17 @@ def find(db,instrument,ym):
 
 def save(db, data):
   """Save a stats record to the database"""
-  columns = ['reference_designator', 'month','deployment_status','cassandra_status','operational_status']
+  columns = ['reference_designator', 'month','deployment_status','cassandra_ts','cassandra_rec','operational_status']
   data = datateam.common.remove_extraneous_columns(columns, data)
   id = find(db,data['reference_designator'],data['month'])
   if id == False:
     data['created'] = time.strftime('%Y-%m-%d %H:%M:%S')
     res = db.insert('monthly_stats', data)
-    print "Created: " +data['reference_designator'] +' ' +data['month']
+    #print "Created: " +data['reference_designator'] +' ' +data['month']
   else:
     data['modified'] = time.strftime('%Y-%m-%d %H:%M:%S')
     res = db.update('monthly_stats', id, data)
-    print "Updated: " +data['reference_designator'] +' ' +data['month']
+    #print "Updated: " +data['reference_designator'] +' ' +data['month']
 
 
 def instrument_list(db):
@@ -115,23 +115,34 @@ def load_cassandra_status(db):
   import pandas as pd
   import netCDF4 as nc
   # Remove previous cassandra_status information
-  res = db.update_where('monthly_stats', 1, cassandra_status=None)
+  res = db.update_where('monthly_stats', 1, cassandra_ts=None, cassandra_rec=None)
 
   # Read in Cassandra data csv as dataframe
-  df = pd.read_csv('stats_data/partition_metadata_20160607.csv')
+  # From http://ooiufs01.ooi.rutgers.edu:12576/sensor/inv/partition_metadata
+  df = pd.read_json('stats_data/partition_metadata_20161012.json')
   # select only the columns we need
-  df = df[['refdes','first','count']]
-  # convert time
+  df = df[['referenceDesignator','method','first','count']]
+    
+  # Convert time
+  df = df[df['first'] < 1e+10] # Hacks to deal with bad times
+  df = df[df['first'] > 1e+8]
   time_units = 'seconds since 1900-01-01'
   df['first'] = nc.num2date(df['first'], time_units)
-  # index time variable
+  #df['first']= pd.to_timedelta(df['first'], unit='s') + pd.to_datetime('1900/1/1')
+  
+  # Merge recovered records
+  df.loc[df['method'].isin(['recovered', 'recovered_cspp', 'recovered_host', 'recovered_inst', 'recovered_wfp']),'method'] = 'recovered'
+  
+  # Index the time variable
   df.index=df['first']
-  # group by month and list reference designators with data for each month
-  a = df.groupby(by=[df.index.year,df.index.month,df.refdes])['count'].sum()
+  
+  # Group by month and list reference designators with data for each month
+  a = df.groupby(by=[df.index.year,df.index.month,df.referenceDesignator,df.method])['count'].sum()
   for row in a.iteritems():
     year = row[0][0]
     month = row[0][1]
     refdes = row[0][2]
+    method = row[0][3]
     if (year >= 2013 and year <= datetime.date.today().year):
       if (len(refdes)==27):
         rd = datateam.designators.find(db,'instruments',refdes)
@@ -139,8 +150,11 @@ def load_cassandra_status(db):
           data = {
             'reference_designator': refdes, 
             'month': str(year).zfill(4) + '-' + str(month).zfill(2) + '-01',
-            'cassandra_status': 1
           }
+          if method in ['telemetered', 'streamed']:
+            data['cassandra_ts'] = row[1]
+          elif method in ['recovered', 'recovered_cspp', 'recovered_host', 'recovered_inst', 'recovered_wfp']:
+            data['cassandra_rec'] = row[1]
           save(db,data)
         else:
           print 'SKIPPING (refdes not found): ' +refdes +' ' +str(year) +'-' +str(month)      
@@ -156,7 +170,7 @@ def load_operational_status(db):
   res = db.update_where('monthly_stats', 1, operational_status=None)
 
   # Load in Data Team's operational status Excel file
-  xlfile = 'stats_data/ExpectedData_2016_07_14.xlsx'
+  xlfile = 'stats_data/ExpectedData_2016_10_12.xlsx'
   wb = xl.load_workbook(filename=xlfile, read_only=True, data_only=True)
   m_data = datateam.deployments.crawl_worksheet(wb[wb.get_sheet_names()[0]])
   moor_header = [str(x).lower().replace(" ", "_") for x in m_data[0]]
