@@ -73,6 +73,13 @@ def load_parameters(db):
   for row in a:
     units[row['id']] = row['value']
 
+  # Load data_product_type
+  c.execute("SELECT * FROM data_product_type")
+  a = c.fetchall()
+  data_product_types={}
+  for row in a:
+    data_product_types[row['id']] = row['value']
+
   # Load parameters
   c.execute("SELECT * FROM parameter")
   a = c.fetchall()
@@ -91,6 +98,9 @@ def load_parameters(db):
     data['parameter_function_map'] = row['parameter_function_map']
     data['data_product_identifier'] = row['data_product_identifier']
     data['description'] = row['description']
+    if (row['data_product_type_id']):
+      data['data_product_type'] = data_product_types[row['data_product_type_id']]
+    data['data_level'] = row['data_level']
     
     save(db,'parameters',data)
     
@@ -145,6 +155,20 @@ def load_streams(db):
   conn.row_factory = sqlite3.Row
   c = conn.cursor()
 
+  # Load stream_content
+  c.execute("SELECT * FROM stream_content")
+  a = c.fetchall()
+  stream_contents={}
+  for row in a:
+    stream_contents[row['id']] = row['value']
+
+  # Load stream_type
+  c.execute("SELECT * FROM stream_type")
+  a = c.fetchall()
+  stream_types={}
+  for row in a:
+    stream_types[row['id']] = row['value']
+
   # Load streams
   c.execute("SELECT * FROM stream")
   a = c.fetchall()
@@ -154,6 +178,10 @@ def load_streams(db):
     data['name'] = row['name']
     data['time_parameter'] = row['time_parameter']
     data['binsize_minutes'] = row['binsize_minutes']
+    if (row['stream_content_id']):
+      data['stream_content'] = stream_contents[row['stream_content_id']]
+    if (row['stream_type_id']):
+      data['stream_type'] = stream_types[row['stream_type_id']]
     
     save(db,'streams',data)
 
@@ -195,8 +223,8 @@ def load_parameters_streams(db):
 
 
 def load_stream_descriptions(db):
-  """Load Custom Stream Names and Descriptions into the database"""
-  columns = ['name', 'stream_type', 'display_name', 'description']
+  """Load custom Stream descriptions into the database"""
+  columns = ['name', 'description']
   with open("infrastructure/stream_descriptions.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
@@ -205,4 +233,4 @@ def load_stream_descriptions(db):
         data['id'] = find_id_by_name(db,'streams',row['name'])
         save(db, 'streams', data)
 
-  print "Step 5 - Custom Streams Names and Descriptions Loaded"
+  print "Step 5 - Custom Stream descriptions loaded"
