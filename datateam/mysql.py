@@ -162,7 +162,8 @@ class MysqlPython(object):
 
 
   def truncate_table(self, table):
-    query = "DELETE FROM %s WHERE 1" % (table)
+    #query = "DELETE FROM %s WHERE 1" % (table)
+    query = "TRUNCATE TABLE %s" % (table)
 
     self.__open()
     self.__session.execute(query)

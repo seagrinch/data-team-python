@@ -9,7 +9,8 @@ parser = argparse.ArgumentParser(description='OOI Data Team Portal Importer')
 parser.add_argument('-o','--option', required=True, 
   choices=['regions', 'sites','nodes','instruments',
     'instrument_classes','instrument_models',
-    'assets','deployments','preload','data_streams'],
+    'assets','cruises','deployments','calibrations',
+    'preload','data_streams'],
   help='Type of data to load')
 parser.add_argument('-s','--server',
   choices=['production','development'],
@@ -36,8 +37,12 @@ def main():
     datateam.instrument_model.load(db)
   elif args.option=="assets":
     datateam.assets.load(db)
+  elif args.option=="cruises":
+    datateam.cruises.load(db)
   elif args.option=="deployments":
     datateam.deployments.load(db)
+  elif args.option=="calibrations":
+    datateam.calibrations.load(db)
   elif args.option=="preload":
     datateam.preload.load(db)
   elif args.option=="data_streams":
