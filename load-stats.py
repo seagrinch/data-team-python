@@ -172,7 +172,7 @@ def load_operational_status(db):
   # Load in Data Team's operational status Excel file
   xlfile = 'stats_data/ExpectedData_2016_10_12.xlsx'
   wb = xl.load_workbook(filename=xlfile, read_only=True, data_only=True)
-  m_data = datateam.deployments.crawl_worksheet(wb[wb.get_sheet_names()[0]])
+  m_data = datateam.common.crawl_worksheet(wb[wb.get_sheet_names()[0]])
   moor_header = [str(x).lower().replace(" ", "_") for x in m_data[0]]
   # Iterate through 'Moorings' sheet data matrix
   for row in m_data[1:]:  # Skip the first row, because all cal sheets have headers
