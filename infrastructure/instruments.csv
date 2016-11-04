@@ -485,6 +485,13 @@ CP04OSSM-SBD11-06-METBKA000,Bulk Meteorology Instrument Package,-3,-3,Buoy Tower
 CP04OSSM-SBD12-00-DCLENG000,Data Concentrator Logger (DCL),0,0,
 CP04OSSM-SBD12-03-HYDGN0000,Hydrogen Sensor,0,0,Buoy Well
 CP04OSSM-SBD12-04-PCO2AA000,pCO2 Air-Sea,0,0,"Buoy Well (1 probe in air, 1 probe in water)"
+CP05MOAS-A6263-00-ENG000000,Mobile Asset Controller,0,0,
+CP05MOAS-A6263-01-FLORTN000,3-Wavelength Fluorometer,0,0,
+CP05MOAS-A6263-02-DOSTAN000,Dissolved Oxygen,0,0,
+CP05MOAS-A6263-03-CTDAVN000,CTD,0,0,
+CP05MOAS-A6263-04-NUTNRN000,Nitrate,0,0,
+CP05MOAS-A6263-05-ADCPAN000,Velocity Profiler (600kHz),0,0,
+CP05MOAS-A6263-06-PARADN000,Photosynthetically Available Radiation,0,0,
 CP05MOAS-A6264-00-ENG000000,Mobile Asset Controller,0,0,
 CP05MOAS-A6264-01-FLORTN000,3-Wavelength Fluorometer,0,0,
 CP05MOAS-A6264-02-DOSTAN000,Dissolved Oxygen,0,0,
