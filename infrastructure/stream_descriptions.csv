@@ -413,6 +413,8 @@ presf_abc_dcl_tide_measurement,Telemetered,Science,Tide Measurement Data Product
 presf_abc_dcl_tide_measurement_recovered,Recovered,Science,Tide Measurement Data Products (DCL),Science Tide Measurement Data Products (DCL),active
 presf_abc_dcl_wave_burst,Telemetered,Science,Wave Burst Data Products (DCL),Science Wave Burst Data Products (DCL),active
 presf_abc_dcl_wave_burst_recovered,Recovered,Science,Wave Burst Data Products (DCL),Science Wave Burst Data Products (DCL),active
+presf_abc_tide_measurement_recovered,Recovered,Science,Tide Measurement Data Products,Science Tide Measurement Data Products,active
+presf_abc_wave_burst_recovered,Recovered,Science,Wave Burst Data Products,Science Wave Burst Data Products,active
 presf_calibration_coefficients,Telemetered,Engineering,Calibration Data,Engineering Calibration Data,active
 presf_operating_status,Telemetered,Engineering,Status Data,Engineering Status Data,active
 presf_tide_measurement,Telemetered,Science,Tide Measurement Data Products,Science Tide Measurement Data Products,active
