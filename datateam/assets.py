@@ -2,6 +2,7 @@
 import csv
 from datetime import datetime
 from .common import *
+import glob
 
 def find(db,asset_uid):
   """Find an Asset by asset_uid"""
@@ -57,7 +58,13 @@ def load(db):
   r = db.truncate_table('assets')
   print "Truncated assets table - Rows deleted: " +str(r)
 
-  with open("repos/asset-management/bulk/bulk_load-AssetRecord.csv", 'rb') as csvfile:
-    reader = csv.DictReader(csvfile)
-    for row in reader:
-      save(db,row)
+  # Iterate over each Asset file
+  file_mask = "repos/asset-management/bulk/*.csv"
+  file_list = glob.glob(file_mask)
+
+  for ifile in file_list:
+    with open(ifile, 'rb') as csvfile:
+      print "Loading file: " + ifile
+      reader = csv.DictReader(csvfile)
+      for row in reader:
+        save(db,row)
