@@ -45,7 +45,7 @@ def save(db, data):
   if id == False:
     data['created'] = time.strftime('%Y-%m-%d %H:%M:%S')
     res = db.insert('monthly_stats', data)
-    #print "Created: " +data['reference_designator'] +' ' +data['month']
+    print "Created: " +data['reference_designator'] +' ' +data['month']
   else:
     data['modified'] = time.strftime('%Y-%m-%d %H:%M:%S')
     res = db.update('monthly_stats', id, data)
@@ -63,7 +63,7 @@ def instrument_list(db):
 
 def deployment_list(db):
   """Get a list of all deployments"""
-  result = db.select('deployments','','reference_designator','anchor_launch_date','recover_date')
+  result = db.select('deployments','','reference_designator','start_date','stop_date')
   if len(result) > 0:
     return result
   else:
@@ -93,11 +93,11 @@ def load_deployment_status(db):
     # Skip non-instrument deployments
     if (len(deployment['reference_designator'])==27):
       # If instrument is currently deployed, use today's date as the end date
-      if (deployment['recover_date']==None):
-        deployment['recover_date'] = datetime.date.today()
+      if (deployment['stop_date']==None):
+        deployment['stop_date'] = datetime.date.today()
       # Standardize date ranges to the beginning of the month
-      start_date = datetime.date(deployment['anchor_launch_date'].year,deployment['anchor_launch_date'].month,1)
-      end_date = datetime.date(deployment['recover_date'].year,deployment['recover_date'].month,1)
+      start_date = datetime.date(deployment['start_date'].year,deployment['start_date'].month,1)
+      end_date = datetime.date(deployment['stop_date'].year,deployment['stop_date'].month,1)
       # Loop over every month in range
       for dt in rrule.rrule(rrule.MONTHLY, dtstart=start_date, until=end_date):
         data = {
@@ -119,7 +119,7 @@ def load_cassandra_status(db):
 
   # Read in Cassandra data csv as dataframe
   # From http://ooiufs01.ooi.rutgers.edu:12576/sensor/inv/partition_metadata
-  df = pd.read_json('stats_data/partition_metadata_20161012.json')
+  df = pd.read_json('stats_data/partition_metadata_20161206.json')
   # select only the columns we need
   df = df[['referenceDesignator','method','first','count']]
     
@@ -170,7 +170,7 @@ def load_operational_status(db):
   res = db.update_where('monthly_stats', 1, operational_status=None)
 
   # Load in Data Team's operational status Excel file
-  xlfile = 'stats_data/ExpectedData_2016_10_12.xlsx'
+  xlfile = 'stats_data/ExpectedData_20161206.xlsx'
   wb = xl.load_workbook(filename=xlfile, read_only=True, data_only=True)
   m_data = datateam.common.crawl_worksheet(wb[wb.get_sheet_names()[0]])
   moor_header = [str(x).lower().replace(" ", "_") for x in m_data[0]]
