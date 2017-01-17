@@ -114,6 +114,7 @@ CP04OSSM-RID27,Near Surface Instrument Frame,7,7
 CP04OSSM-SBC11,Surface Buoy,0,0
 CP04OSSM-SBD11,Surface Buoy,0,0
 CP04OSSM-SBD12,Surface Buoy,0,0
+CP05MOAS-A6263,Coastal AUV 6263,,
 CP05MOAS-A6264,Coastal AUV 6264,,
 CP05MOAS-GL335,Coastal Glider 335,0,200
 CP05MOAS-GL336,Coastal Glider 336,0,1000
@@ -140,6 +141,7 @@ GA03FLMA-RIM01,Mooring Riser,30,1510
 GA03FLMA-RIS01,Mooring Riser,30,30
 GA03FLMB-RIM01,Mooring Riser,30,1500
 GA03FLMB-RIS01,Mooring Riser,30,30
+GA05MOAS-GL364,Open Ocean Glider 364,0,1000
 GA05MOAS-GL469,Open Ocean Glider 469,0,1000
 GA05MOAS-GL470,Open Ocean Glider 470,0,1000
 GA05MOAS-GL493,Open Ocean Glider 493,0,1000
@@ -150,6 +152,8 @@ GA05MOAS-GL538,Open Ocean Glider 538,,
 GA05MOAS-GL563,Open Ocean Glider 563,,
 GA05MOAS-PG562,Global Profiling Glider 562,,
 GA05MOAS-PG563,Global Profiling Glider 563,,
+GA05MOAS-PG578,Global Profiling Glider 578,,
+GA05MOAS-PG580,Global Profiling Glider 580,,
 GI01SUMO-RID16,Near Surface Instrument Frame,12,12
 GI01SUMO-RII11,Mooring Riser,20,1500
 GI01SUMO-SBC11,Surface Buoy,0,0
