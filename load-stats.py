@@ -43,11 +43,11 @@ def save(db, data):
   data = datateam.common.remove_extraneous_columns(columns, data)
   id = find(db,data['reference_designator'],data['month'])
   if id == False:
-    data['created'] = time.strftime('%Y-%m-%d %H:%M:%S')
+    #data['created'] = time.strftime('%Y-%m-%d %H:%M:%S')
     res = db.insert('monthly_stats', data)
     print "Created: " +data['reference_designator'] +' ' +data['month']
   else:
-    data['modified'] = time.strftime('%Y-%m-%d %H:%M:%S')
+    #data['modified'] = time.strftime('%Y-%m-%d %H:%M:%S')
     res = db.update('monthly_stats', id, data)
     #print "Updated: " +data['reference_designator'] +' ' +data['month']
 
@@ -119,7 +119,7 @@ def load_cassandra_status(db):
 
   # Read in Cassandra data csv as dataframe
   # From http://ooiufs01.ooi.rutgers.edu:12576/sensor/inv/partition_metadata
-  df = pd.read_json('stats_data/partition_metadata_20161206.json')
+  df = pd.read_json('stats_data/partition_metadata_20170210.json')
   # select only the columns we need
   df = df[['referenceDesignator','method','first','count']]
     
