@@ -6208,6 +6208,8 @@ RS03CCAL-MJ03F-05-BOTPTA301,streamed,botpt_iris_sample,,noaa.botpt.ooicore.drive
 RS03CCAL-MJ03F-05-BOTPTA301,streamed,botpt_lily_leveling,,noaa.botpt.ooicore.driver,,Science
 RS03CCAL-MJ03F-05-BOTPTA301,streamed,botpt_lily_sample,,noaa.botpt.ooicore.driver,,Science
 RS03CCAL-MJ03F-05-BOTPTA301,streamed,botpt_nano_sample,,noaa.botpt.ooicore.driver,,Science
+RS03CCAL-MJ03F-05-BOTPTA301,streamed,botpt_nano_sample_24hr,,noaa.botpt.ooicore.driver,,Science
+RS03CCAL-MJ03F-05-BOTPTA301,streamed,botpt_nano_sample_15s,,noaa.botpt.ooicore.driver,,Science
 RS03CCAL-MJ03F-05-BOTPTA301,streamed,botpt_status,,noaa.botpt.ooicore.driver,,Science
 RS03CCAL-MJ03F-06-HYDLFA305,streamed,antelope_metadata,,antelope.orb.ooicore.driver,,Science
 RS03CCAL-MJ03F-06-HYDLFA305,streamed,iris,,,,Science
@@ -6220,6 +6222,8 @@ RS03ECAL-MJ03E-06-BOTPTA302,streamed,botpt_iris_sample,,noaa.botpt.ooicore.drive
 RS03ECAL-MJ03E-06-BOTPTA302,streamed,botpt_lily_leveling,,noaa.botpt.ooicore.driver,,Science
 RS03ECAL-MJ03E-06-BOTPTA302,streamed,botpt_lily_sample,,noaa.botpt.ooicore.driver,,Science
 RS03ECAL-MJ03E-06-BOTPTA302,streamed,botpt_nano_sample,,noaa.botpt.ooicore.driver,,Science
+RS03ECAL-MJ03E-06-BOTPTA302,streamed,botpt_nano_sample_24hr,,noaa.botpt.ooicore.driver,,Science
+RS03ECAL-MJ03E-06-BOTPTA302,streamed,botpt_nano_sample_15s,,noaa.botpt.ooicore.driver,,Science
 RS03ECAL-MJ03E-06-BOTPTA302,streamed,botpt_status,,noaa.botpt.ooicore.driver,,Science
 RS03ECAL-MJ03E-08-OBSSPA304,streamed,antelope_metadata,,antelope.orb.ooicore.driver,,Science
 RS03ECAL-MJ03E-08-OBSSPA304,streamed,iris,,,,Science
@@ -6252,6 +6256,8 @@ RS03INT2-MJ03D-06-BOTPTA303,streamed,botpt_iris_sample,,noaa.botpt.ooicore.drive
 RS03INT2-MJ03D-06-BOTPTA303,streamed,botpt_lily_leveling,,noaa.botpt.ooicore.driver,,Science
 RS03INT2-MJ03D-06-BOTPTA303,streamed,botpt_lily_sample,,noaa.botpt.ooicore.driver,,Science
 RS03INT2-MJ03D-06-BOTPTA303,streamed,botpt_nano_sample,,noaa.botpt.ooicore.driver,,Science
+RS03INT2-MJ03D-06-BOTPTA303,streamed,botpt_nano_sample_24hr,,noaa.botpt.ooicore.driver,,Science
+RS03INT2-MJ03D-06-BOTPTA303,streamed,botpt_nano_sample_15s,,noaa.botpt.ooicore.driver,,Science
 RS03INT2-MJ03D-06-BOTPTA303,streamed,botpt_status,,noaa.botpt.ooicore.driver,,Science
 RS03INT2-MJ03D-12-VEL3DB304,streamed,vel3d_b_engineering,,nobska.mavs4.ooicore.driver,,Science
 RS03INT2-MJ03D-12-VEL3DB304,streamed,vel3d_b_sample,,nobska.mavs4.ooicore.driver,,Science
