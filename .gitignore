@@ -3,3 +3,4 @@ repos/
 log.txt
 config.cfg
 partition_metadata*.json
+partition_metadata*.gz
