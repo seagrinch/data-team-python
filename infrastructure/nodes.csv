@@ -70,6 +70,9 @@ CE09OSSM-RID27,Near Surface Instrument Frame,7,7
 CE09OSSM-SBC11,Surface Buoy,0,0
 CE09OSSM-SBD11,Surface Buoy,0,0
 CE09OSSM-SBD12,Surface Buoy,0,0
+CP01CNPM-SBS01,Surface Buoy,0,0
+CP01CNPM-RII01,Mooring Riser,70,70
+CP01CNPM-WFP01,Wire-Following Profiler,0,70
 CP01CNSM-MFC31,Seafloor Multi-Function Node (MFN),133,133
 CP01CNSM-MFD35,Seafloor Multi-Function Node (MFN),133,133
 CP01CNSM-MFD37,Seafloor Multi-Function Node (MFN),133,133
@@ -92,6 +95,9 @@ CP02PMUI-WFP01,Wire-Following Profiler,15,70
 CP02PMUO-RII01,Mooring Riser,425,425
 CP02PMUO-SBS01,Surface Buoy,0,0
 CP02PMUO-WFP01,Wire-Following Profiler,20,425
+CP03ISPM-SBS01,Surface Buoy,0,0
+CP03ISPM-RII01,Mooring Riser,70,70
+CP03ISPM-WFP01,Wire-Following Profiler,0,70
 CP03ISSM-MFC31,Seafloor Multi-Function Node (MFN),91.5,91.5
 CP03ISSM-MFD35,Seafloor Multi-Function Node (MFN),91.5,91.5
 CP03ISSM-MFD37,Seafloor Multi-Function Node (MFN),91.5,91.5
