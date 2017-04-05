@@ -59,7 +59,7 @@ def load(db):
   print "Truncated assets table - Rows deleted: " +str(r)
 
   # Iterate over each Asset file
-  file_mask = "repos/asset-management/bulk/*.csv"
+  file_mask = "repos/asset-management/bulk/*_bulk_load-AssetRecord.csv"
   file_list = glob.glob(file_mask)
 
   for ifile in file_list:
