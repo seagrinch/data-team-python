@@ -328,6 +328,15 @@ CE09OSSM-SBD12-00-DCLENG000,Data Concentrator Logger (DCL),0,0,
 CE09OSSM-SBD12-03-HYDGN0000,Hydrogen Sensor,0,0,Buoy Well
 CE09OSSM-SBD12-04-PCO2AA000,pCO2 Air-Sea,0,0,"Buoy Well (1 probe in air, 1 probe in water)"
 CE09OSSM-SBD12-05-WAVSSA000,Surface Wave Spectra,0,0,"Buoy Well, center of Mass"
+CP01CNPM-SBS01-00-STCENG000,Platform Controller,0,0,
+CP01CNPM-SBS01-01-MOPAK0000,3-Axis Motion Pack,0,0,"Buoy Well, center of Mass"
+CP01CNPM-RII01-02-ADCPTG010,Velocity Profiler (150kHz),70,70,Instrument Frame
+CP01CNPM-WFP01-00-WFPENG000,Profiler Controller,15,70,Wire Following Profiler Body
+CP01CNPM-WFP01-01-VEL3DK000,3-D Single Point Velocity Meter,15,70,Wire Following Profiler Body
+CP01CNPM-WFP01-02-DOFSTK000,Dissolved Oxygen,15,70,Wire Following Profiler Body
+CP01CNPM-WFP01-03-CTDPFK000,CTD,15,70,Wire Following Profiler Body
+CP01CNPM-WFP01-04-FLORTK000,3-Wavelength Fluorometer,15,70,Wire Following Profiler Body
+CP01CNPM-WFP01-05-PARADK000,Photosynthetically Available Radiation,15,70,Wire Following Profiler Body
 CP01CNSM-MFC31-00-CPMENG000,Platform Controller,133,133,
 CP01CNSM-MFD35-00-DCLENG000,Data Concentrator Logger (DCL),133,133,
 CP01CNSM-MFD35-01-ADCPTF000,Velocity Profiler (150kHz),133,133,Multi-Function Node
@@ -407,6 +416,15 @@ CP02PMUO-WFP01-02-DOFSTK000,Dissolved Oxygen,15,425,Wire Following Profiler Body
 CP02PMUO-WFP01-03-CTDPFK000,CTD,15,425,Wire Following Profiler Body
 CP02PMUO-WFP01-04-FLORTK000,3-Wavelength Fluorometer,15,425,Wire Following Profiler Body
 CP02PMUO-WFP01-05-PARADK000,Photosynthetically Available Radiation,15,425,Wire Following Profiler Body
+CP03ISPM-SBS01-00-STCENG000,Platform Controller,0,0,
+CP03ISPM-SBS01-01-MOPAK0000,3-Axis Motion Pack,0,0,"Buoy Well, center of Mass"
+CP03ISPM-RII01-02-ADCPTG010,Velocity Profiler (150kHz),70,70,Instrument Frame
+CP03ISPM-WFP01-00-WFPENG000,Profiler Controller,15,70,Wire Following Profiler Body
+CP03ISPM-WFP01-01-VEL3DK000,3-D Single Point Velocity Meter,15,70,Wire Following Profiler Body
+CP03ISPM-WFP01-02-DOFSTK000,Dissolved Oxygen,15,70,Wire Following Profiler Body
+CP03ISPM-WFP01-03-CTDPFK000,CTD,15,70,Wire Following Profiler Body
+CP03ISPM-WFP01-04-FLORTK000,3-Wavelength Fluorometer,15,70,Wire Following Profiler Body
+CP03ISPM-WFP01-05-PARADK000,Photosynthetically Available Radiation,15,70,Wire Following Profiler Body
 CP03ISSM-MFC31-00-CPMENG000,Platform Controller,91.5,91.5,
 CP03ISSM-MFD35-00-DCLENG000,Data Concentrator Logger (DCL),91.5,91.5,
 CP03ISSM-MFD35-01-ADCPTF000,Velocity Profiler (150kHz),91.5,91.5,Multi-Function Node
