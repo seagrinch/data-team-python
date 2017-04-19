@@ -1188,8 +1188,8 @@ GS05MOAS-PG566-06-PARADM000,Photosynthetically Available Radiation,0,200,
 RS01SBPD-DP01A-00-ENG000000,Mobile Asset Controller,200,2905,
 RS01SBPD-DP01A-01-CTDPFL104,CTD,200,2905,Deep Profiler
 RS01SBPD-DP01A-02-VEL3DA103,3-D Single Point Velocity Meter,200,2905,Deep Profiler
-RS01SBPD-DP01A-03-FLCDRA104,CDOM Fluorometer,200,2905,Deep Profiler
-RS01SBPD-DP01A-03-FLNTUA104,2-Wavelength Fluorometer,200,2905,Deep Profiler
+RS01SBPD-DP01A-03-FLCDRA102,CDOM Fluorometer,200,2905,Deep Profiler
+RS01SBPD-DP01A-04-FLNTUA102,2-Wavelength Fluorometer,200,2905,Deep Profiler
 RS01SBPD-DP01A-05-OPTAAC102,Spectrophotometer,200,2905,Deep Profiler
 RS01SBPD-DP01A-06-DOSTAD104,Dissolved Oxygen,200,2905,Deep Profiler
 RS01SBPS-PC01A-05-ADCPTD102,Velocity Profiler (150kHz),200,200,Mid-Water Platform
