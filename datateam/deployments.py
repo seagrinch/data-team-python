@@ -74,4 +74,8 @@ def load(db):
         row['longitude'] = row['lon']
 
         data = remove_extraneous_columns(columns, row)
-        save_deployment(db,data)
+        if len(row['reference_designator'])==27 or len(row['reference_designator'])==14:
+          save_deployment(db,data)
+        else:
+          print "Invalid Reference Designator: " +data['reference_designator'] +' deployment #' +str(data['deployment_number'])
+

@@ -40,6 +40,11 @@ def load_regions(db):
 
 def load_sites(db):
   """Load Sites into the database"""
+
+  # Truncate table
+  r = db.truncate_table('sites')
+  print "Truncated Sites table"
+
   columns = ['reference_designator', 'parent_region', 'array_name', 'name', 'description', 'min_depth', 'max_depth', 'longitude', 'latitude']
   with open("infrastructure/sites.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
@@ -50,6 +55,11 @@ def load_sites(db):
 
 def load_nodes(db):
   """Load Nodes into the database"""
+
+  # Truncate table
+  r = db.truncate_table('nodes')
+  print "Truncated Nodes table"
+
   columns = ['reference_designator', 'parent_site', 'name']
   with open("infrastructure/nodes.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
@@ -60,6 +70,10 @@ def load_nodes(db):
 
 def load_instruments(db):
   """Load Instruments into the database"""
+
+  # Truncate table
+  r = db.truncate_table('instruments')
+  print "Truncated Instruments table"
 
 #   # Load in the Instrument Classes file for lookups
 #   catalogfile = 'infrastructure/instrument_classes.csv'
