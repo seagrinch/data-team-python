@@ -1237,6 +1237,8 @@ RS03ASHS-MJ03B-00-OSMOIA301,Osmosis-Based Water Sampler,1552,1552,Located Off Jb
 RS03ASHS-MJ03B-05-OBSSPA302,Short-Period Ocean Bottom Seismometer,1552,1552,Located Off Jbox
 RS03ASHS-MJ03B-06-OBSSPA301,Short-Period Ocean Bottom Seismometer,1552,1552,Located Off Jbox
 RS03ASHS-MJ03B-07-TMPSFA301,Diffuse Vent Fluid 3-D Temperature Array,1552,1552,Located Off Jbox
+RS03ASHS-MJ03B-09-BOTPTA304,Bottom Pressure and Tilt,1552,1552,Located Off Jbox
+RS03ASHS-MJ03B-10-CTDPFB304,CTD,1552,1552,Located Off Jbox
 RS03ASHS-PN03B-06-CAMHDA301,HD Digital Video Camera,1552,1552,
 RS03AXBS-LJ03A-05-HPIESA301,"Horizontal Electric Field, Pressure and Inverted Echo Sounder",2639,2639,Located Off Jbox
 RS03AXBS-LJ03A-09-HYDBBA302,Broadband Acoustic Receiver (Hydrophone),2594,2594,Low-Power Jbox
