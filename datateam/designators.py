@@ -84,7 +84,7 @@ def load_instruments(db):
 #       vocab[row['class']] = row['name']
 
   # Save the Instrument
-  columns = ['reference_designator', 'parent_node', 'name', 'start_depth', 'end_depth', 'location']
+  columns = ['reference_designator', 'parent_node', 'name', 'start_depth', 'end_depth', 'current_status', 'preferred_stream', 'preferred_parameter', 'location']
   with open("infrastructure/instruments.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
