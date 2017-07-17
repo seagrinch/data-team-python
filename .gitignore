@@ -4,3 +4,5 @@ log.txt
 config.cfg
 partition_metadata*.json
 partition_metadata*.gz
+ExpectedData*.xlsx
+InstrumentStreams*.csv
