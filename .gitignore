@@ -6,3 +6,4 @@ partition_metadata*.json
 partition_metadata*.gz
 ExpectedData*.xlsx
 InstrumentStreams*.csv
+instrument_status_*.csv
