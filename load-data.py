@@ -23,6 +23,8 @@ def main():
   """Main function for command line execution"""
   db = datateam.MysqlPython()
   db.load_config(args.server)
+  db.open_connection()
+
   if args.option =="regions":
     datateam.designators.load_regions(db)
   elif args.option=="sites":
@@ -47,6 +49,8 @@ def main():
     datateam.preload.load(db)
   elif args.option=="data_streams":
     datateam.data_streams.load(db)
+
+  db.close_connection()
 
 
 # Run main function when in comand line mode        
