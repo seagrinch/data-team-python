@@ -50,6 +50,8 @@ def main():
   elif args.option=="data_streams":
     datateam.data_streams.load(db)
 
+  datateam.import_log.log(db,args.option)
+
   db.close_connection()
 
 
