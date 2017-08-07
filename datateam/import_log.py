@@ -32,6 +32,6 @@ def save(db,data):
 def log(db,name):
   data = {
     'name':name,
-    'import_date':time.strftime('%Y-%m-%d %H:%M:%S')
+    'import_date':time.strftime('%Y-%m-%d %H:%M:%S',time.gmtime())
   }
   save(db,data)
