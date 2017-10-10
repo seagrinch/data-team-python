@@ -51,6 +51,13 @@ class MysqlPython(object):
     self.__connection.close()
 
 
+  def open_connection(self):
+    self.__open()
+
+  def close_connection(self):
+    self.__close()
+
+
   def load_config(self, server):
     import ConfigParser
     config = ConfigParser.ConfigParser()
@@ -71,10 +78,10 @@ class MysqlPython(object):
       values = tuple(data.values())
       query += "(" + ",".join(["`%s`"] * len(keys)) %  tuple (keys) + ") VALUES (" + ",".join(["%s"]*len(values)) + ")"
 
-    self.__open()
+#     self.__open()
     self.__session.execute(query, values)
     self.__connection.commit()
-    self.__close()
+#     self.__close()
     return self.__session.lastrowid
 
 
@@ -97,10 +104,10 @@ class MysqlPython(object):
     if where:
       query += " WHERE %s" % where
 
-    self.__open()
+#     self.__open()
     self.__session.execute(query)
     result = [item for item in self.__session.fetchall()]
-    self.__close()
+#     self.__close()
 
     return result
 
@@ -116,12 +123,12 @@ class MysqlPython(object):
         query += ","
     query += " WHERE id=%d" % index
 
-    self.__open()
+#     self.__open()
     self.__session.execute(query, values)
     self.__connection.commit()
     # Obtain rows affected
     update_rows = self.__session.rowcount
-    self.__close()
+#     self.__close()
 
     return update_rows
 
@@ -137,12 +144,12 @@ class MysqlPython(object):
         query += ","
     query += " WHERE %s" % where
 
-    self.__open()
+#     self.__open()
     self.__session.execute(query, values)
     self.__connection.commit()
     # Obtain rows affected
     update_rows = self.__session.rowcount
-    self.__close()
+#     self.__close()
 
     return update_rows
 
@@ -150,13 +157,13 @@ class MysqlPython(object):
   def delete(self, table, index):
     query = "DELETE FROM %s WHERE id=%d" % (table,index)
 
-    self.__open()
+#     self.__open()
     self.__session.execute(query)
     self.__connection.commit()
 
     # Obtain rows affected
     delete_rows = self.__session.rowcount
-    self.__close()
+#     self.__close()
 
     return delete_rows
 
@@ -165,13 +172,13 @@ class MysqlPython(object):
     #query = "DELETE FROM %s WHERE 1" % (table)
     query = "TRUNCATE TABLE %s" % (table)
 
-    self.__open()
+#     self.__open()
     self.__session.execute(query)
     self.__connection.commit()
 
     # Obtain rows affected
     delete_rows = self.__session.rowcount
-    self.__close()
+#     self.__close()
 
     return delete_rows
 

@@ -85,7 +85,7 @@ def load_instrument_status(db):
       # Grab Cassandra data from API
       data = requests.get(url, auth=(config['username'],config['password']))
       # Check current status
-      if data.status_code == 200 and len(data.json())>1:
+      if data.status_code == 200 and len(data.json())>2:
         row['current_status'] = 'Operational'
       else:
         row['current_status'] = 'Not Operational'
@@ -104,7 +104,10 @@ def main():
   """Main function for command line execution"""
   db = datateam.MysqlPython()
   db.load_config(args.server)
-  load_instrument_status(db)
+  db.open_connection()
+  load_instrument_status(db)  
+  datateam.import_log.log(db,'status_check')
+  db.close_connection()
 
 
 # Run main function when in comand line mode        

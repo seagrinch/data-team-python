@@ -120,7 +120,10 @@ def main():
   """Main function for command line execution"""
   db = datateam.MysqlPython()
   db.load_config(args.server)
+  db.open_connection()
   load_annotations(db)
+  datateam.import_log.log(db,'annotations')
+  db.close_connection()
 
 
 # Run main function when in comand line mode        
