@@ -79,6 +79,15 @@ CE02SHSP-SP001-06-SPKIRJ000,Spectral Irradiance,0,80,Not Deployed,spkir_abj_cspp
 CE02SHSP-SP001-07-FLORTJ000,3-Wavelength Fluorometer,0,80,Not Deployed,flort_dj_cspp_instrument,22,Surface Piercing Profiler
 CE02SHSP-SP001-08-CTDPFJ000,CTD,0,80,Not Deployed,ctdpf_j_cspp_instrument,4,
 CE02SHSP-SP001-09-PARADJ000,Photosynthetically Available Radiation,0,80,Not Deployed,parad_j_cspp_instrument,3236,
+CE02SHSP-SP002-00-SPPENG000,Profiler Controller,0,80,Engineering,,,
+CE02SHSP-SP002-01-DOSTAJ000,Dissolved Oxygen,0,80,Not Deployed,dosta_abcdjm_cspp_instrument,14,Surface Piercing Profiler
+CE02SHSP-SP002-02-VELPTJ000,Single Point Velocity Meter,0,80,Not Deployed,velpt_j_cspp_instrument,1154,Surface Piercing Profiler
+CE02SHSP-SP002-04-OPTAAJ000,Spectrophotometer,0,80,Not Deployed,optaa_dj_cspp_instrument,20,Surface Piercing Profiler
+CE02SHSP-SP002-05-NUTNRJ000,Nitrate,0,80,Not Deployed,nutnr_j_cspp_instrument,18,Surface Piercing Profiler
+CE02SHSP-SP002-06-SPKIRJ000,Spectral Irradiance,0,80,Not Deployed,spkir_abj_cspp_instrument,2766,Surface Piercing Profiler
+CE02SHSP-SP002-07-FLORTJ000,3-Wavelength Fluorometer,0,80,Not Deployed,flort_dj_cspp_instrument,22,Surface Piercing Profiler
+CE02SHSP-SP002-08-CTDPFJ000,CTD,0,80,Not Deployed,ctdpf_j_cspp_instrument,4,
+CE02SHSP-SP002-09-PARADJ000,Photosynthetically Available Radiation,0,80,Not Deployed,parad_j_cspp_instrument,3236,
 CE04OSBP-LJ01C-05-ADCPSI103,Velocity Profiler (75 kHz),580,580,,adcp_velocity_earth,,Low-Power JBox
 CE04OSBP-LJ01C-06-CTDBPO108,CTD,580,580,,ctdbp_no_sample,908,Low-Power JBox
 CE04OSBP-LJ01C-06-DOSTAD108,Dissolved Oxygen,580,580,,ctdbp_no_sample,908,Low-Power JBox
@@ -380,7 +389,7 @@ CP01CNSP-SP001-07-SPKIRJ000,Spectral Irradiance,0,100,Not Deployed,spkir_abj_csp
 CP01CNSP-SP001-08-CTDPFJ000,CTD,0,100,Not Deployed,ctdpf_j_cspp_instrument,4,Surface Piercing Profiler
 CP01CNSP-SP001-09-FLORTJ000,3-Wavelength Fluorometer,0,100,Not Deployed,flort_dj_cspp_instrument,22,Surface Piercing Profiler
 CP01CNSP-SP001-10-PARADJ000,Photosynthetically Available Radiation,0,100,Not Deployed,parad_j_cspp_instrument,3236,Surface Piercing Profiler
-CP02PMCI-RII01-02-ADCPTG010,Velocity Profiler (150kHz),15,104,,adcps_jln_stc_instrument,,Sensor cage
+CP02PMCI-RII01-02-ADCPTG010,Velocity Profiler (150kHz),104,104,,adcps_jln_stc_instrument,,Sensor cage
 CP02PMCI-SBS01-00-STCENG000,Platform Controller,0,0,Engineering,,,
 CP02PMCI-SBS01-01-MOPAK0000,3-Axis Motion Pack,0,0,Engineering,,,"Buoy Well, center of Mass"
 CP02PMCI-WFP01-00-WFPENG000,Profiler Controller,15,104,Engineering,,,
@@ -389,7 +398,7 @@ CP02PMCI-WFP01-02-DOFSTK000,Dissolved Oxygen,15,104,,dofst_k_wfp_instrument,1965
 CP02PMCI-WFP01-03-CTDPFK000,CTD,15,104,,ctdpf_ckl_wfp_instrument,1960,Wire Following Profiler Body
 CP02PMCI-WFP01-04-FLORTK000,3-Wavelength Fluorometer,15,104,,flort_kn_stc_imodem_instrument,22,Wire Following Profiler Body
 CP02PMCI-WFP01-05-PARADK000,Photosynthetically Available Radiation,15,104,,parad_k__stc_imodem_instrument,1657,Wire Following Profiler Body
-CP02PMCO-RII01-02-ADCPTG010,Velocity Profiler (150kHz),15,125,,adcps_jln_stc_instrument,,Sensor cage
+CP02PMCO-RII01-02-ADCPTG010,Velocity Profiler (150kHz),125,125,,adcps_jln_stc_instrument,,Sensor cage
 CP02PMCO-SBS01-00-STCENG000,Platform Controller,0,0,Engineering,,,
 CP02PMCO-SBS01-01-MOPAK0000,3-Axis Motion Pack,0,0,Engineering,,,"Buoy Well, center of Mass"
 CP02PMCO-WFP01-00-WFPENG000,Profiler Controller,15,125,Engineering,,,
@@ -407,7 +416,7 @@ CP02PMUI-WFP01-02-DOFSTK000,Dissolved Oxygen,15,70,,dofst_k_wfp_instrument,1965,
 CP02PMUI-WFP01-03-CTDPFK000,CTD,15,70,,ctdpf_ckl_wfp_instrument,1960,Wire Following Profiler Body
 CP02PMUI-WFP01-04-FLORTK000,3-Wavelength Fluorometer,15,70,,flort_kn_stc_imodem_instrument,22,Wire Following Profiler Body
 CP02PMUI-WFP01-05-PARADK000,Photosynthetically Available Radiation,15,70,,parad_k__stc_imodem_instrument,1657,Wire Following Profiler Body
-CP02PMUO-RII01-02-ADCPSL010,Velocity Profiler (75 kHz),15,425,,adcps_jln_stc_instrument,,Sensor cage
+CP02PMUO-RII01-02-ADCPSL010,Velocity Profiler (75 kHz),425,425,,adcps_jln_stc_instrument,,Sensor cage
 CP02PMUO-SBS01-00-STCENG000,Platform Controller,0,0,Engineering,,,
 CP02PMUO-SBS01-01-MOPAK0000,3-Axis Motion Pack,0,0,Engineering,,,"Buoy Well, center of Mass"
 CP02PMUO-WFP01-00-WFPENG000,Profiler Controller,15,425,Engineering,,,
@@ -465,6 +474,7 @@ CP03ISSP-SP001-07-SPKIRJ000,Spectral Irradiance,0,80,Not Deployed,spkir_abj_cspp
 CP03ISSP-SP001-08-CTDPFJ000,CTD,0,80,Not Deployed,ctdpf_j_cspp_instrument,4,Surface Piercing Profiler
 CP03ISSP-SP001-09-FLORTJ000,3-Wavelength Fluorometer,0,80,Not Deployed,flort_dj_cspp_instrument,22,Surface Piercing Profiler
 CP03ISSP-SP001-10-PARADJ000,Photosynthetically Available Radiation,0,80,Not Deployed,parad_j_cspp_instrument,3236,Surface Piercing Profiler
+CP04OSPM-RII01-02-ADCPSL010,Velocity Profiler (75 kHz),425,425,,adcps_jln_stc_instrument,,Sensor cage
 CP04OSPM-SBS01-00-STCENG000,Platform Controller,0,0,Engineering,,,
 CP04OSPM-SBS11-02-MOPAK0000,3-Axis Motion Pack,0,0,Engineering,,,"Buoy Well, center of Mass"
 CP04OSPM-WFP01-00-WFPENG000,Profiler Controller,15,427,Engineering,,,
@@ -898,6 +908,10 @@ GI05MOAS-GL486-00-ENG000000,Mobile Asset Controller,0,1000,Not Deployed,,,
 GI05MOAS-GL486-01-FLORDM000,2-Wavelength Fluorometer,0,1000,Not Deployed,flord_m_glider_instrument,1538,
 GI05MOAS-GL486-02-DOSTAM000,Dissolved Oxygen,0,1000,Not Deployed,dosta_abcdjm_glider_instrument,2750,
 GI05MOAS-GL486-04-CTDGVM000,CTD,0,1000,Not Deployed,ctdgv_m_glider_instrument,1528,
+GI05MOAS-GL493-00-ENG000000,Mobile Asset Controller,0,1000,,,,
+GI05MOAS-GL493-01-FLORDM000,2-Wavelength Fluorometer,0,1000,,flord_m_glider_instrument,1538,
+GI05MOAS-GL493-02-DOSTAM000,Dissolved Oxygen,0,1000,,dosta_abcdjm_glider_instrument,2750,
+GI05MOAS-GL493-04-CTDGVM000,CTD,0,1000,,ctdgv_m_glider_instrument,1528,
 GI05MOAS-GL495-00-ENG000000,Mobile Asset Controller,0,1000,Lost,,,
 GI05MOAS-GL495-01-FLORDM000,2-Wavelength Fluorometer,0,1000,Lost,flord_m_glider_instrument,1538,
 GI05MOAS-GL495-02-DOSTAM000,Dissolved Oxygen,0,1000,Lost,dosta_abcdjm_glider_instrument,2750,
