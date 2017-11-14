@@ -7,3 +7,6 @@ partition_metadata*.gz
 ExpectedData*.xlsx
 InstrumentStreams*.csv
 instrument_status_*.csv
+/daily_stats/*.csv
+
+stats_data/deployments.csv
