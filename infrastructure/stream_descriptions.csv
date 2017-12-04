@@ -259,6 +259,8 @@ flort_kn_stc_imodem_instrument,Telemetered,Science,Data Products (STC),Science D
 flort_kn_stc_imodem_instrument_recovered,Recovered,Science,Data Products (STC),Science Data Products (STC),active
 flort_m_glider_instrument,Telemetered,Science,Data Products,Science Data Products,active
 flort_m_glider_recovered,Recovered,Science,Data Products,Science Data Products,active
+flort_o_glider_data,Telemetered,Science,Data Products,Science Data Products,active
+flort_o_glider_data,Recovered,Science,Data Products,Science Data Products,active
 fuelcell_eng_dcl_recovered,Recovered,Engineering,Data (DCL),Engineering Data (DCL),active
 fuelcell_eng_dcl_telemetered,Telemetered,Engineering,Data (DCL),Engineering Data (DCL),active
 glider_eng_metadata,Telemetered,Engineering,Metadata,Engineering Metadata,active
