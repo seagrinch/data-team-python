@@ -182,3 +182,10 @@ class MysqlPython(object):
 
     return delete_rows
 
+
+  def sqlquery(self, query):
+    self.__session.execute(query)
+    self.__connection.commit()
+#     rows = self.__connection.rowcount
+    return self.__session
+

@@ -72,8 +72,8 @@ def load_instruments(db):
   """Load Instruments into the database"""
 
   # Truncate table
-#   r = db.truncate_table('instruments')
-#   print "Truncated Instruments table"
+  r = db.truncate_table('instruments')
+  print "Truncated Instruments table"
 
 #   # Load in the Instrument Classes file for lookups
 #   catalogfile = 'infrastructure/instrument_classes.csv'

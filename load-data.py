@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# OOI Datateam Import - Load Data Script
+# OOI Datateam Import - Master script for loading data into the database
 
 import datateam
 import argparse
@@ -10,7 +10,7 @@ parser.add_argument('-o','--option', required=True,
   choices=['regions', 'sites','nodes','instruments',
     'instrument_classes','instrument_models',
     'assets','cruises','deployments','calibrations',
-    'preload','data_streams'],
+    'preload','data_streams','ingestions'],
   help='Type of data to load')
 parser.add_argument('-s','--server',
   choices=['production','development'],
@@ -49,6 +49,8 @@ def main():
     datateam.preload.load(db)
   elif args.option=="data_streams":
     datateam.data_streams.load(db)
+  elif args.option=="ingestions":
+    datateam.ingestions.load(db)
 
   datateam.import_log.log(db,args.option)
 

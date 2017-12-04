@@ -114,15 +114,15 @@ def load(db):
         row['longitude'] = row['lon']
 
         row = remove_extraneous_columns(columns, row)
-
-        # First, save parent deployment if new
-        check_parent(db, row)
       
         # Save Instrument Deployment
         if len(row['reference_designator'])==27 or len(row['reference_designator'])==14 or len(row['reference_designator'])==8:
           if row.get('deploy_cuid','').startswith('#'):
             print "Ignored Deployment: " +row['reference_designator'] +' deployment #' +str(row['deployment_number'])
           else:
+            # First, save parent deployment if new
+            check_parent(db,row)
+            # Then save the deployment
             save_deployment(db,row)
         else:
           print "Invalid Reference Designator: " +row['reference_designator'] +' deployment #' +str(row['deployment_number'])

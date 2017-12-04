@@ -50,7 +50,7 @@ def create_url(reference_designator,stream):
   else:
     delivery_method = 'telemetered'
   end_date = datetime.utcnow()
-  start_date = end_date - timedelta(1)
+  start_date = end_date - timedelta(2)
   url = ('https://ooinet.oceanobservatories.org/api/m2m/12576/sensor/inv/{site}/{node}/{inst}'
          '/{delivery_method}/{stream}?beginDT={start_time}&endDT={end_time}&limit=1000&parameters=7').format(
            site=site, node=node, inst=inst,
@@ -88,6 +88,7 @@ def load_instrument_status(db):
       if data.status_code == 200 and len(data.json())>2:
         row['current_status'] = 'Operational'
       else:
+        print "  Response: %s" % ( data.text )      
         row['current_status'] = 'Not Operational'
       # Save to database
       print "  Code: %d Length: %d Status: %s" % ( data.status_code, len(data.json()), row['current_status'] )
