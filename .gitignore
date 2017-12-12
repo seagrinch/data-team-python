@@ -10,3 +10,4 @@ instrument_status_*.csv
 /daily_stats/*.csv
 
 stats_data/deployments.csv
+stats_data/deployment_stats_*
