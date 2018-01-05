@@ -52,19 +52,19 @@ auv_eng_auv_digital_tx_board_recovered,,,, ,VOID
 auv_eng_auv_digital_usbl,,,, ,VOID
 auv_eng_auv_digital_usbl_recovered,,,, ,VOID
 auv_eng_auv_emergency_board,,,, ,VOID
-auv_eng_auv_emergency_board_recovered,,,, ,VOID
+auv_eng_auv_emergency_board_recovered,Recovered,Engineering,, ,VOID
 auv_eng_auv_fault_message,,,, ,VOID
-auv_eng_auv_fault_message_recovered,,,, ,VOID
+auv_eng_auv_fault_message_recovered,Recovered,Engineering,, ,VOID
 auv_eng_auv_imagenex_852,Telemetered,Science,Echosounder Data Products,Science Echosounder Data Products,active
 auv_eng_auv_imagenex_852_recovered,Recovered,Science,Echosounder Data Products,Science Echosounder Data Products,active
 auv_eng_auv_oil_compensator,,,, ,VOID
-auv_eng_auv_oil_compensator_recovered,,,, ,VOID
+auv_eng_auv_oil_compensator_recovered,Recovered,Engineering,, ,VOID
 auv_eng_auv_smart_battery,,,, ,VOID
-auv_eng_auv_smart_battery_recovered,,,, ,VOID
+auv_eng_auv_smart_battery_recovered,Recovered,Engineering,, ,VOID
 auv_eng_auv_state,,,, ,VOID
-auv_eng_auv_state_recovered,,,, ,VOID
+auv_eng_auv_state_recovered,Recovered,Engineering,, ,VOID
 auv_eng_auv_tri_fin_motor,,,, ,VOID
-auv_eng_auv_tri_fin_motor_recovered,,,, ,VOID
+auv_eng_auv_tri_fin_motor_recovered,Recovered,Engineering,, ,VOID
 botpt_heat_sample,Streamed,Science,HEAT Sensor Data Products,Science HEAT Sensor Data Products,active
 botpt_iris_sample,Streamed,Science,IRIS Sensor Data Products,Science IRIS Sensor Data Products,active
 botpt_lily_leveling,Streamed,Calibration,LILY Leveling Data ,Calibration LILY Leveling Data ,active
@@ -259,6 +259,12 @@ flort_kn_stc_imodem_instrument,Telemetered,Science,Data Products (STC),Science D
 flort_kn_stc_imodem_instrument_recovered,Recovered,Science,Data Products (STC),Science Data Products (STC),active
 flort_m_glider_instrument,Telemetered,Science,Data Products,Science Data Products,active
 flort_m_glider_recovered,Recovered,Science,Data Products,Science Data Products,active
+flort_m_sample,Telemetered,Science,Data Products,Science Data Products,active
+flort_m_sample,Recovered,Science,Data Products,Science Data Products,active
+flort_o_glider_data,Telemetered,Science,Data Products,Science Data Products,active
+flort_o_glider_data,Recovered,Science,Data Products,Science Data Products,active
+flort_sample,Telemetered,Science,Data Products,Science Data Products,active
+flort_sample,Recovered,Science,Data Products,Science Data Products,active
 fuelcell_eng_dcl_recovered,Recovered,Engineering,Data (DCL),Engineering Data (DCL),active
 fuelcell_eng_dcl_telemetered,Telemetered,Engineering,Data (DCL),Engineering Data (DCL),active
 glider_eng_metadata,Telemetered,Engineering,Metadata,Engineering Metadata,active
@@ -314,6 +320,7 @@ nutnr_j_cspp_instrument_recovered,Recovered,Science,Data Products,Science Data P
 nutnr_j_cspp_metadata,Telemetered,Engineering,Metadata,Engineering Metadata,active
 nutnr_j_cspp_metadata_recovered,Recovered,Engineering,Metadata,Engineering Metadata,active
 nutnr_m_dark_instrument_recovered,Recovered,Science,Dark Sample Data,Science Dark Sample Data,active
+nutnr_m_glider_instrument,Recovered,Science,Data Products,Science Data Products,active
 nutnr_m_glider_instrument,Telemetered,Science,Data Products,Science Data Products,active
 nutnr_m_instrument_recovered,Recovered,Science,Data Products,Science Data Products,active
 nutnr_n_auv_instrument,Telemetered,Science,Data Products,Science Data Products,active
