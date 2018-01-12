@@ -23,7 +23,8 @@ def main():
   r = db.truncate_table('stream_stats')
   print "Truncated table stream_stats"
 
-  files = ['cabled.csv','endurance.csv','global.csv','pioneer.csv']
+#   files = ['cabled.csv','endurance.csv','global.csv','pioneer.csv']
+  files = ['CE.csv','CP.csv','GA.csv','GI.csv','GP.csv','GS.csv','RS.csv']
   
   # Loop over each file and import
   for ff in files:
@@ -36,8 +37,9 @@ def main():
   r = db.truncate_table('instrument_stats')
   print "Truncated table instrument_stats"
 
-  files = ['cabled_refdes.csv','endurance_refdes.csv','global_refdes.csv','pioneer_refdes.csv']
-  
+#   files = ['cabled_refdes.csv','endurance_refdes.csv','global_refdes.csv','pioneer_refdes.csv']
+  files = ['CE_refdes.csv','CP_refdes.csv','GA_refdes.csv','GI_refdes.csv','GP_refdes.csv','GS_refdes.csv','RS_refdes.csv']
+
   # Loop over each file and import
   for ff in files:
     dfile = 'daily_stats/%s' % (ff)
