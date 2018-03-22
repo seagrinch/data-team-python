@@ -48,6 +48,10 @@ def load(db):
         for row in reader:
           if row['reference_designator']:
             row['method'] = row['data_source']
-            row['deployment'] = ifile.split('/')[-1].split('_')[1][1:]
+            deployment = ifile.split('/')[-1].split('_')[1][1:]
+            try:
+              row['deployment'] = int(deployment)
+            except:
+              row['deployment'] = 0
             data = remove_extraneous_columns(columns, row)
             save_ingestion(db,data)
