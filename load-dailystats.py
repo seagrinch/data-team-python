@@ -23,12 +23,11 @@ def main():
   r = db.truncate_table('stream_stats')
   print "Truncated table stream_stats"
 
-#   files = ['cabled.csv','endurance.csv','global.csv','pioneer.csv']
-  files = ['CE.csv','CP.csv','GA.csv','GI.csv','GP.csv','GS.csv','RS.csv']
+  arys = ['CE','CP','GA','GI','GP','GS','RS']
   
   # Loop over each file and import
-  for ff in files:
-    dfile = 'daily_stats/%s' % (ff)
+  for ff in arys:
+    dfile = 'daily_stats/%s_stream_final.csv' % (ff)
     sql = "LOAD DATA LOCAL INFILE '%s' INTO TABLE stream_stats FIELDS TERMINATED BY ',' IGNORE 1 LINES (reference_designator, method, stream, date, status);" % dfile
     a = db.sqlquery(sql);
     print "%s rows inserted from %s " % ( a.rowcount, dfile )
@@ -37,12 +36,9 @@ def main():
   r = db.truncate_table('instrument_stats')
   print "Truncated table instrument_stats"
 
-#   files = ['cabled_refdes.csv','endurance_refdes.csv','global_refdes.csv','pioneer_refdes.csv']
-  files = ['CE_refdes.csv','CP_refdes.csv','GA_refdes.csv','GI_refdes.csv','GP_refdes.csv','GS_refdes.csv','RS_refdes.csv']
-
   # Loop over each file and import
-  for ff in files:
-    dfile = 'daily_stats/%s' % (ff)
+  for ff in arys:
+    dfile = 'daily_stats/%s_refdes_final.csv' % (ff)
     sql = "LOAD DATA LOCAL INFILE '%s' INTO TABLE instrument_stats FIELDS TERMINATED BY ',' IGNORE 1 LINES (reference_designator, date, status);" % dfile
     a = db.sqlquery(sql);
     print "%s rows inserted from %s " % ( a.rowcount, dfile )
