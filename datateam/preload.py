@@ -80,6 +80,20 @@ def load_parameters(db):
   for row in a:
     data_product_types[row['id']] = row['value']
 
+  # Load parameter_type
+  c.execute("SELECT * FROM parameter_type")
+  a = c.fetchall()
+  parameter_types={}
+  for row in a:
+    parameter_types[row['id']] = row['value']
+
+  # Load value_encoding
+  c.execute("SELECT * FROM value_encoding")
+  a = c.fetchall()
+  value_encodings={}
+  for row in a:
+    value_encodings[row['id']] = row['value']
+
   # Load parameters
   c.execute("SELECT * FROM parameter")
   a = c.fetchall()
@@ -101,6 +115,10 @@ def load_parameters(db):
     if (row['data_product_type_id']):
       data['data_product_type'] = data_product_types[row['data_product_type_id']]
     data['data_level'] = row['data_level']
+    if (row['parameter_type_id']):
+      data['parameter_type'] = parameter_types[row['parameter_type_id']]
+    if (row['value_encoding_id']):
+      data['value_encoding'] = value_encodings[row['value_encoding_id']]
     
     save(db,'parameters',data)
     
