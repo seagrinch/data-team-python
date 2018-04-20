@@ -39,6 +39,7 @@ class MysqlPython(object):
         passwd = self.__password, 
         db     = self.__database, 
         unix_socket = self.__socket,
+        local_infile = 1,
         charset='utf8')
       self.__connection = cnx
       self.__session    = cnx.cursor(cursorclass=MySQLdb.cursors.DictCursor) #
