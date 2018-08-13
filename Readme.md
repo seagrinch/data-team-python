@@ -14,9 +14,9 @@ This repository includes a number of Python scripts that update metadata and oth
 
 2. Setup the custom environment
  
-```
+```sh
 conda create --name datateam python=2.7
-source activate datateam
+source activate datateam # This may be different depending on your setup
 # conda install mysql-python # May be needed on linux distributions
 # pip install --upgrade --force-reinstall pip==9.0.3 # If you run into a distutils bug
 pip install -r requirements.txt
@@ -29,21 +29,22 @@ pip install -r requirements.txt
 
 4. Clone additional repos
 In order to load the necessary metadata into the portal, you will need to clone the following repos into your working directory.
-```
+```sh
 mkdir repos
 cd repos
 git clone https://github.com/oceanobservatories/preload-database.git
 git clone https://github.com/ooi-integration/asset-management.git
 git clone https://github.com/ooi-integration/ingestion-csvs.git
-cd repos/preload-database/
+cd preload-database/
 pip install -r requirements.txt
 ```
+
 
 ## Initial Import
 To populate the Data Team Portal database, run the following scripts.  Note, the -s option is used to specify the database configuration option (specified in the config file) that should be used. 
 
-```
-# System Infrastructure Information (from this repo)
+```sh
+# Load System Infrastructure Information (from the CSV files in this repo)
 ./load-data.py -s production -o regions
 ./load-data.py -s production -o sites
 ./load-data.py -s production -o nodes
@@ -51,34 +52,45 @@ To populate the Data Team Portal database, run the following scripts.  Note, the
 ./load-data.py -s production -o instrument_classes
 ./load-data.py -s production -o instrument_models
 
-# Additional Metadata (from other repos)
+# Load Asset Management Metadata
 ./load-data.py -s production -o assets
 ./load-data.py -s production -o cruises
 ./load-data.py -s production -o deployments
 ./load-data.py -s production -o calibrations
+
+# Load Preload Metadata
+./preload_update_db.sh # First update the local sqlite database
 ./load-data.py -s production -o preload
+
+# Load Data Streams List (from this repo)
 ./load-data.py -s production -o data_streams
+
+# Load Ingestions CSVs
 ./load-data.py -s production -o ingestions
 
 # Annotations (loaded directly from OOI Net)
 ./load-annotations.py -s production 
 ```
 
+
 ## Daily Statistics
-To load the daily statistics, you will need to install and run the ??? repo.  Because the statistics calculations take a few days to run, we recommend running this script weekly.  Once the statistics have been calculated, you can use the `load-dailystats.py` script to load the results into the database/portal.  Simply specify the output directory as one of the inputs as follows:
+To load the daily statistics, you will need to install and run the [ooi-stats](https://github.com/ooi-data-review/ooi_stats) repo.  Because the statistics calculations take a few days to run, we recommend running this script weekly.  Once the statistics have been calculated, you can use the `load-dailystats.py` script in this repo to load the results into the database/portal.  Simply specify the output directory as one of the inputs as follows:
 
-```
-./load-dailystats.py -s production -d /home/knuth/ooi_stats/stats/output/
-```
+`./load-dailystats.py -s production -d /home/knuth/ooi_stats/stats/output/`
 
-## Regular Database Updates
-Typically, basic system infrastructure information will not change much.  The most common update is adding additional nodes, instruments (reference designators) and data_streams when new gliders are added.  After the appropriate csv files in this repo have been updated, you can easily update the necessary database tables by running the necessary load-data.py commands again.
 
-Updates to preload, asset-management, and ingestions will occur more often.  As a result, it is suggested that these updates be regularly made on a cron.  A number of example cron scripts are included in the repo and can be adapted for your system.  Here is a suggested crontab that updates the statistics and metadata information weekly, while updating the annotations on a daily basis.
+## Keeping the database up to date
+Typically, basic system infrastructure information will not change much.  The most common update is adding additional nodes, instruments (reference designators), and data_streams when new gliders are added.  After the appropriate [CSV files](infrastructure/) in this repo have been updated, you can easily update the necessary database tables by running the necessary load-data.py commands again.  
 
-```
-0 8 * * 1 /home/sage/data-team-python/cron_stats.sh > out_stats.txt 2>&1
+Historically, this "infrastructure" information has been specified manually in this repo in order to maintain independence from the OOI data portal (i.e. uFrame).  This provides an independent check on the system, which has been helpful in identifying mistakes or omissions.  Due to their complexity, asset management and preload information is imported directly from the same raw sources (the repos noted above) that OOI Net uses.  When the imports fail, it is a good indicator of coding mistakes or other issues with the metadata files.
+
+Updates to preload, asset-management, and ingestions occur quite often (especially around deployments).  As a result, we recommend automating these updates using cron jobs.  A number of example cron scripts are included in the repo and can be adapted for your system.  
+
+Here is a suggested crontab that updates the statistics and metadata information weekly, while updating the annotations on a daily basis.
+
+```sh
 0 9 * * 1 /home/sage/data-team-python/cron_update.sh > out_update.txt 2>&1
+0 8 * * 1 /home/sage/data-team-python/cron_stats.sh > out_stats.txt 2>&1
 0 8 * * * /home/sage/data-team-python/cron_annotations.sh > out_annotations.txt 2>&1
 ```
 
