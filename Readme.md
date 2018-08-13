@@ -99,6 +99,6 @@ Here is a suggested crontab that updates the statistics and metadata information
 
 Developed by Sage Lichtenwalner, Rutgers University
 
-With help from the OOI Data Team: Mike Vardaro, Leila Belabassi, Lori Garzio, Friedrich Knuth,  Michael Smith & Michael Crowley
+With help from the OOI Data Team: Mike Vardaro, Leila Belabassi, Lori Garzio, Friedrich Knuth,  Michael Smith, and Michael Crowley
 
 ©2018 OOI Data Team, Rutgers University
