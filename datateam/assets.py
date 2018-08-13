@@ -67,4 +67,7 @@ def load(db):
       print "Loading file: " + ifile
       reader = csv.DictReader(csvfile)
       for row in reader:
-        save(db,row)
+        if row.get('ASSET_UID','').startswith('#'):
+          print "Ignored Asset: " +row['ASSET_UID']
+        else:
+          save(db,row)
