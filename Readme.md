@@ -95,6 +95,11 @@ Here is a suggested crontab that updates the statistics and metadata information
 ```
 
 
+## More Information
+
+For more information on how to use the included scripts, please check out the [HelpDoc](HelpDoc.md). 
+
+
 ## Credits
 
 Developed by Sage Lichtenwalner, Rutgers University
