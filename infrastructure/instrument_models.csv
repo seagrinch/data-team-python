@@ -38,6 +38,7 @@ CTDPF,B,CTD,Sea-Bird,SBE 16plusV2
 CTDPF,J,CTD,Sea-Bird,FastCAT 49 CTD
 CTDPF,K,CTD,Sea-Bird,SBE 52MP
 CTDPF,L,CTD,Sea-Bird,SBE 52MP
+D1000,A,Temperature Sensor,PMEL/Butterfield,Modified McLane Remote Access Sampler
 DCLEN,G,Data Concentrator Logger (DCL),WHOI,Data Concentrator Logger
 DOFST,A,Dissolved Oxygen,Sea-Bird,SBE 43
 DOFST,K,Dissolved Oxygen,Sea-Bird,SBE 43F

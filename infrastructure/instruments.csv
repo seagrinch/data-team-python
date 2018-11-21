@@ -884,6 +884,14 @@ GI03FLMB-RIS01-00-SIOENG000,Platform Controller,30,30,Engineering,,,
 GI03FLMB-RIS01-03-DOSTAD000,Dissolved Oxygen,30,30,,dosta_abcdjm_sio_instrument,14,Sensor cage
 GI03FLMB-RIS01-04-PHSENF000,Seawater pH,30,30,,phsen_abcdef_sio_mule_instrument,2767,Sensor cage
 GI03FLMB-RIS01-05-FLORTD000,3-Wavelength Fluorometer,30,30,,flort_dj_sio_instrument,22,Sensor cage
+GI05MOAS-GL363-00-ENG000000,Mobile Asset Controller,0,1000,Engineering,,,
+GI05MOAS-GL363-01-FLORDM000,2-Wavelength Fluorometer,0,1000,,flord_m_glider_instrument,1538,
+GI05MOAS-GL363-02-DOSTAM000,Dissolved Oxygen,0,1000,,dosta_abcdjm_glider_instrument,2750,
+GI05MOAS-GL363-04-CTDGVM000,CTD,0,1000,,ctdgv_m_glider_instrument,1528,
+GI05MOAS-GL453-00-ENG000000,Mobile Asset Controller,0,1000,Engineering,,,
+GI05MOAS-GL453-01-FLORDM000,2-Wavelength Fluorometer,0,1000,,flord_m_glider_instrument,1538,
+GI05MOAS-GL453-02-DOSTAM000,Dissolved Oxygen,0,1000,,dosta_abcdjm_glider_instrument,2750,
+GI05MOAS-GL453-04-CTDGVM000,CTD,0,1000,,ctdgv_m_glider_instrument,1528,
 GI05MOAS-GL469-00-ENG000000,Mobile Asset Controller,0,1000,Engineering,,,
 GI05MOAS-GL469-01-FLORDM000,2-Wavelength Fluorometer,0,1000,,flord_m_glider_instrument,1538,
 GI05MOAS-GL469-02-DOSTAM000,Dissolved Oxygen,0,1000,,dosta_abcdjm_glider_instrument,2750,
@@ -1026,6 +1034,10 @@ GP05MOAS-GL453-00-ENG000000,Mobile Asset Controller,0,1000,Engineering,,,
 GP05MOAS-GL453-01-FLORDM000,2-Wavelength Fluorometer,0,1000,,flord_m_glider_instrument,1538,
 GP05MOAS-GL453-02-DOSTAM000,Dissolved Oxygen,0,1000,,dosta_abcdjm_glider_instrument,2750,
 GP05MOAS-GL453-04-CTDGVM000,CTD,0,1000,,ctdgv_m_glider_instrument,1528,
+GP05MOAS-GL469-00-ENG000000,Mobile Asset Controller,0,1000,Engineering,,,
+GP05MOAS-GL469-01-FLORDM000,2-Wavelength Fluorometer,0,1000,,flord_m_glider_instrument,1538,
+GP05MOAS-GL469-02-DOSTAM000,Dissolved Oxygen,0,1000,,dosta_abcdjm_glider_instrument,2750,
+GP05MOAS-GL469-04-CTDGVM000,CTD,0,1000,,ctdgv_m_glider_instrument,1528,
 GP05MOAS-GL523-00-ENG000000,Mobile Asset Controller,0,1000,Engineering,,,
 GP05MOAS-GL523-01-FLORDM000,2-Wavelength Fluorometer,0,1000,,flord_m_glider_instrument,1538,
 GP05MOAS-GL523-02-DOSTAM000,Dissolved Oxygen,0,1000,,dosta_abcdjm_glider_instrument,2750,
@@ -1306,6 +1318,7 @@ RS03ECAL-MJ03E-09-HYDLFA304,Low Frequency Acoustic Receiver (Hydrophone),1516,15
 RS03ECAL-MJ03E-09-OBSBBA302,Broadband Ocean Bottom Seismometer,1516,1516,,antelope_metadata,,Located Off Jbox
 RS03INT1-MJ03C-05-CAMDSB303,Digital Still Camera,1520,1520,Camera,,,Located Off Jbox
 RS03INT1-MJ03C-06-MASSPA301,Mass Spectrometer,1520,1520,,massp_rga_sample,,Located Off Jbox
+RS03INT1-MJ03C-07-D1000A301,Temperature Sensor,1521,1521,,d1000_sample,,Attached to the RASFL instrument
 RS03INT1-MJ03C-07-PPSDNA301,Particulate DNA Sampler,1520,1520,Recovered Only,,,co-located with Interactive Sampler
 RS03INT1-MJ03C-07-RASFLA301,Hydrothermal Vent Fluid Interactive Sampler,1520,1520,Recovered Only,,,Located Off Jbox
 RS03INT1-MJ03C-09-THSPHA301,Hydrothermal Vent Fluid In-situ Chemistry,1520,1520,,thsph_sample,2630,Located Off Jbox
