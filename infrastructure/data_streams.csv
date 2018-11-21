@@ -107,7 +107,7 @@ CE01ISSM-MFD37-03-DOSTAD000,recovered_host,dosta_abcdjm_ctdbp_dcl_instrument_rec
 CE01ISSM-MFD37-03-DOSTAD000,recovered_inst,dosta_abcdjm_ctdbp_instrument_recovered,Ingest.dosta-abcdjm-ctdbp_recovered,dosta_abcdjm_ctdbp_recovered_driver,dosta_abcdjm_ctdbp,Science
 CE01ISSM-MFD37-03-DOSTAD000,telemetered,dosta_abcdjm_ctdbp_dcl_instrument,Ingest.dosta-abcdjm-ctdbp-dcl_telemetered,dosta_abcdjm_ctdbp_dcl_telemetered_driver,dosta_abcdjm_ctdbp_dcl,Science
 CE01ISSM-MFD37-06-CAMDSA000,,,,,,Science
-CE01ISSM-MFD37-07-ZPLSCC000,recovered_host,,Ingest.zplsc-c-dcl_recovered,,,Science
+CE01ISSM-MFD37-07-ZPLSCC000,recovered_host,zplsc_c_instrument,Ingest.zplsc-c-dcl_recovered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
 CE01ISSM-MFD37-07-ZPLSCC000,telemetered,zplsc_c_instrument,Ingest.zplsc-c-dcl_telemetered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
 CE01ISSM-RID16-00-DCLENG000,recovered_host,cg_dcl_eng_dcl_cpu_uptime_recovered,Ingest.cg-dcl-eng-dcl_recovered,cg_dcl_eng_dcl_recovered_driver,cg_dcl_eng_dcl,Engineering
 CE01ISSM-RID16-00-DCLENG000,recovered_host,cg_dcl_eng_dcl_dlog_aarm_recovered,Ingest.cg-dcl-eng-dcl_recovered,cg_dcl_eng_dcl_recovered_driver,cg_dcl_eng_dcl,Engineering
@@ -315,6 +315,7 @@ CE02SHBP-LJ01D-10-PHSEND103,streamed,phsen_thermistor_voltage,,sunburst.sami2_ph
 CE02SHBP-LJ01D-11-HYDBBA106,streamed,antelope_metadata,,antelope.orb.ooicore.driver,,Science
 CE02SHBP-MJ01C-07-ZPLSCB101,streamed,zplsc_metadata,,,,Science
 CE02SHBP-MJ01C-07-ZPLSCB101,streamed,zplsc_status,,kut.ek60.ooicore.driver,,Science
+CE02SHBP-MJ01C-07-ZPLSCB101,streamed,zplsc_echogram_data,,kut.ek60.ooicore.driver,,Science
 CE02SHBP-MJ01C-08-CAMDSB107,streamed,camds_disk_status,,kml.cam.camds.driver,,Science
 CE02SHBP-MJ01C-08-CAMDSB107,streamed,camds_health_status,,kml.cam.camds.driver,,Science
 CE02SHBP-MJ01C-08-CAMDSB107,streamed,camds_image_metadata,,kml.cam.camds.driver,,Science
@@ -647,6 +648,7 @@ CE04OSPD-DP01B-06-DOSTAD105,recovered_inst,dpc_optode_instrument_recovered,Inges
 CE04OSPD-DP01B-06-DOSTAD105,recovered_wfp,dpc_optode_instrument_recovered,Ingest.deep-profiler_recovered,dpc_driver,dpc,Science
 CE04OSPS-PC01B-05-ZPLSCB102,streamed,zplsc_metadata,,,,Science
 CE04OSPS-PC01B-05-ZPLSCB102,streamed,zplsc_status,,kut.ek60.ooicore.driver,,Science
+CE04OSPS-PC01B-05-ZPLSCB102,streamed,zplsc_echogram_data,,kut.ek60.ooicore.driver,,Science
 CE04OSPS-PC01B-4A-CTDPFA109,streamed,ctdpf_optode_calibration_coefficients,,seabird.sbe16plus_v2.ctdpf_jb.driver,,Science
 CE04OSPS-PC01B-4A-CTDPFA109,streamed,ctdpf_optode_configuration,,seabird.sbe16plus_v2.ctdpf_jb.driver,,Science
 CE04OSPS-PC01B-4A-CTDPFA109,streamed,ctdpf_optode_hardware,,seabird.sbe16plus_v2.ctdpf_jb.driver,,Science
@@ -1240,7 +1242,8 @@ CE06ISSM-MFD37-03-DOSTAD000,recovered_host,dosta_abcdjm_ctdbp_dcl_instrument_rec
 CE06ISSM-MFD37-03-DOSTAD000,recovered_inst,dosta_abcdjm_ctdbp_instrument_recovered,Ingest.dosta-abcdjm-ctdbp_recovered,dosta_abcdjm_ctdbp_recovered_driver,dosta_abcdjm_ctdbp,Science
 CE06ISSM-MFD37-03-DOSTAD000,telemetered,dosta_abcdjm_ctdbp_dcl_instrument,Ingest.dosta-abcdjm-ctdbp-dcl_telemetered,dosta_abcdjm_ctdbp_dcl_telemetered_driver,dosta_abcdjm_ctdbp_dcl,Science
 CE06ISSM-MFD37-06-CAMDSA000,,,,,,Science
-CE06ISSM-MFD37-07-ZPLSCC000,recovered_host,,Ingest.zplsc-c-dcl_recovered,,,Science
+CE06ISSM-MFD37-07-ZPLSCC000,recovered_host,zplsc_c_instrument,Ingest.zplsc-c-dcl_recovered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
+CE06ISSM-MFD37-07-ZPLSCC000,recovered_inst,zplsc_echogram_data,Ingest.zplsc-c_recovered,zplsc_c_recovered_driver,zplsc_c,Science
 CE06ISSM-MFD37-07-ZPLSCC000,telemetered,zplsc_c_instrument,Ingest.zplsc-c-dcl_telemetered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
 CE06ISSM-RID16-00-DCLENG000,recovered_host,cg_dcl_eng_dcl_cpu_uptime_recovered,Ingest.cg-dcl-eng-dcl_recovered,cg_dcl_eng_dcl_recovered_driver,cg_dcl_eng_dcl,Engineering
 CE06ISSM-RID16-00-DCLENG000,recovered_host,cg_dcl_eng_dcl_dlog_aarm_recovered,Ingest.cg-dcl-eng-dcl_recovered,cg_dcl_eng_dcl_recovered_driver,cg_dcl_eng_dcl,Engineering
@@ -1510,7 +1513,8 @@ CE07SHSM-MFD37-03-DOSTAD000,recovered_host,dosta_abcdjm_ctdbp_dcl_instrument_rec
 CE07SHSM-MFD37-03-DOSTAD000,recovered_inst,dosta_abcdjm_ctdbp_instrument_recovered,Ingest.dosta-abcdjm-ctdbp_recovered,dosta_abcdjm_ctdbp_recovered_driver,dosta_abcdjm_ctdbp,Science
 CE07SHSM-MFD37-03-DOSTAD000,telemetered,dosta_abcdjm_ctdbp_dcl_instrument,Ingest.dosta-abcdjm-ctdbp-dcl_telemetered,dosta_abcdjm_ctdbp_dcl_telemetered_driver,dosta_abcdjm_ctdbp_dcl,Science
 CE07SHSM-MFD37-06-CAMDSA000,,,,,,Science
-CE07SHSM-MFD37-07-ZPLSCC000,recovered_host,,Ingest.zplsc-c-dcl_recovered,,,Science
+CE07SHSM-MFD37-07-ZPLSCC000,recovered_host,zplsc_c_instrument,Ingest.zplsc-c-dcl_recovered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
+CE07SHSM-MFD37-07-ZPLSCC000,recovered_inst,plsc_echogram_data,Ingest.zplsc-c_recovered,zplsc_c_recovered_driver,zplsc_c,Science
 CE07SHSM-MFD37-07-ZPLSCC000,telemetered,zplsc_c_instrument,Ingest.zplsc-c-dcl_telemetered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
 CE07SHSM-RIC21-00-CPMENG000,recovered_host,cg_cpm_eng_cpm_recovered,Ingest.cg-cpm-eng-cpm_recovered,cg_cpm_eng_cpm_recovered_driver,cg_cpm_eng_cpm,Engineering
 CE07SHSM-RIC21-00-CPMENG000,telemetered,cg_cpm_eng_cpm,Ingest.cg-cpm-eng-cpm_telemetered,cg_cpm_eng_cpm_telemetered_driver,cg_cpm_eng_cpm,Engineering
@@ -1857,7 +1861,8 @@ CE09OSSM-MFD37-03-DOSTAD000,recovered_host,dosta_abcdjm_ctdbp_dcl_instrument_rec
 CE09OSSM-MFD37-03-DOSTAD000,recovered_inst,dosta_abcdjm_ctdbp_instrument_recovered,Ingest.dosta-abcdjm-ctdbp_recovered,dosta_abcdjm_ctdbp_recovered_driver,dosta_abcdjm_ctdbp,Science
 CE09OSSM-MFD37-03-DOSTAD000,telemetered,dosta_abcdjm_ctdbp_dcl_instrument,Ingest.dosta-abcdjm-ctdbp-dcl_telemetered,dosta_abcdjm_ctdbp_dcl_telemetered_driver,dosta_abcdjm_ctdbp_dcl,Science
 CE09OSSM-MFD37-06-CAMDSA000,,,,,,Science
-CE09OSSM-MFD37-07-ZPLSCC000,recovered_host,,Ingest.zplsc-c-dcl_recovered,,,Science
+CE09OSSM-MFD37-07-ZPLSCC000,recovered_host,zplsc_c_instrument,Ingest.zplsc-c-dcl_recovered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
+CE09OSSM-MFD37-07-ZPLSCC000,recovered_inst,zplsc_echogram_data,Ingest.zplsc-c_recovered,zplsc_c_recovered_driver,zplsc_c,Science
 CE09OSSM-MFD37-07-ZPLSCC000,telemetered,zplsc_c_instrument,Ingest.zplsc-c-dcl_telemetered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
 CE09OSSM-RIC21-00-CPMENG000,recovered_host,cg_cpm_eng_cpm_recovered,Ingest.cg-cpm-eng-cpm_recovered,cg_cpm_eng_cpm_recovered_driver,cg_cpm_eng_cpm,Engineering
 CE09OSSM-RIC21-00-CPMENG000,telemetered,cg_cpm_eng_cpm,Ingest.cg-cpm-eng-cpm_telemetered,cg_cpm_eng_cpm_telemetered_driver,cg_cpm_eng_cpm,Engineering
@@ -2152,8 +2157,8 @@ CP01CNSM-MFD37-03-CTDBPD000,recovered_inst,ctdbp_cdef_instrument_recovered,Inges
 CP01CNSM-MFD37-03-CTDBPD000,telemetered,ctdbp_cdef_dcl_instrument,Ingest.ctdbp-cdef-dcl_telemetered,ctdbp_cdef_dcl_telemetered_driver,ctdbp_cdef_dcl,Science
 CP01CNSM-MFD37-04-DOSTAD000,recovered_host,dosta_abcdjm_dcl_instrument_recovered,Ingest.dosta-abcdjm-dcl_recovered,dosta_abcdjm_dcl_recovered_driver,dosta_abcdjm_dcl,Science
 CP01CNSM-MFD37-04-DOSTAD000,telemetered,dosta_abcdjm_dcl_instrument,Ingest.dosta-abcdjm-dcl_telemetered,dosta_abcdjm_dcl_telemetered_driver,dosta_abcdjm_dcl,Science
-CP01CNSM-MFD37-07-ZPLSCC000,recovered_host,,Ingest.zplsc-c-dcl_recovered,,,Science
-CP01CNSM-MFD37-07-ZPLSCC000,recovered_inst,,,,,
+CP01CNSM-MFD37-07-ZPLSCC000,recovered_host,zplsc_c_instrument,Ingest.zplsc-c-dcl_recovered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
+CP01CNSM-MFD37-07-ZPLSCC000,recovered_inst,zplsc_echogram_data,Ingest.zplsc-c_recovered,zplsc_c_recovered_driver,zplsc_c,Science
 CP01CNSM-MFD37-07-ZPLSCC000,telemetered,zplsc_c_instrument,Ingest.zplsc-c-dcl_telemetered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
 CP01CNSM-RIC21-00-CPMENG000,recovered_host,cg_cpm_eng_cpm_recovered,Ingest.cg-cpm-eng-cpm_recovered,cg_cpm_eng_cpm_recovered_driver,cg_cpm_eng_cpm,Engineering
 CP01CNSM-RIC21-00-CPMENG000,telemetered,cg_cpm_eng_cpm,Ingest.cg-cpm-eng-cpm_telemetered,cg_cpm_eng_cpm_telemetered_driver,cg_cpm_eng_cpm,Engineering
@@ -2630,7 +2635,7 @@ CP03ISSM-MFD37-03-CTDBPD000,recovered_inst,ctdbp_cdef_instrument_recovered,Inges
 CP03ISSM-MFD37-03-CTDBPD000,telemetered,ctdbp_cdef_dcl_instrument,Ingest.ctdbp-cdef-dcl_telemetered,ctdbp_cdef_dcl_telemetered_driver,ctdbp_cdef_dcl,Science
 CP03ISSM-MFD37-04-DOSTAD000,recovered_host,dosta_abcdjm_dcl_instrument_recovered,Ingest.dosta-abcdjm-dcl_recovered,dosta_abcdjm_dcl_recovered_driver,dosta_abcdjm_dcl,Science
 CP03ISSM-MFD37-04-DOSTAD000,telemetered,dosta_abcdjm_dcl_instrument,Ingest.dosta-abcdjm-dcl_telemetered,dosta_abcdjm_dcl_telemetered_driver,dosta_abcdjm_dcl,Science
-CP03ISSM-MFD37-07-ZPLSCC000,recovered_host,,Ingest.zplsc-c-dcl_recovered,,,Science
+CP03ISSM-MFD37-07-ZPLSCC000,recovered_host,zplsc_c_instrument,Ingest.zplsc-c-dcl_recovered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
 CP03ISSM-MFD37-07-ZPLSCC000,telemetered,zplsc_c_instrument,Ingest.zplsc-c-dcl_telemetered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
 CP03ISSM-RIC21-00-CPMENG000,recovered_host,cg_cpm_eng_cpm_recovered,Ingest.cg-cpm-eng-cpm_recovered,cg_cpm_eng_cpm_recovered_driver,cg_cpm_eng_cpm,Engineering
 CP03ISSM-RIC21-00-CPMENG000,telemetered,cg_cpm_eng_cpm,Ingest.cg-cpm-eng-cpm_telemetered,cg_cpm_eng_cpm_telemetered_driver,cg_cpm_eng_cpm,Engineering
@@ -2943,7 +2948,7 @@ CP04OSSM-MFD37-03-CTDBPE000,recovered_inst,ctdbp_cdef_instrument_recovered,Inges
 CP04OSSM-MFD37-03-CTDBPE000,telemetered,ctdbp_cdef_dcl_instrument,Ingest.ctdbp-cdef-dcl_telemetered,ctdbp_cdef_dcl_telemetered_driver,ctdbp_cdef_dcl,Science
 CP04OSSM-MFD37-04-DOSTAD000,recovered_host,dosta_abcdjm_dcl_instrument_recovered,Ingest.dosta-abcdjm-dcl_recovered,dosta_abcdjm_dcl_recovered_driver,dosta_abcdjm_dcl,Science
 CP04OSSM-MFD37-04-DOSTAD000,telemetered,dosta_abcdjm_dcl_instrument,Ingest.dosta-abcdjm-dcl_telemetered,dosta_abcdjm_dcl_telemetered_driver,dosta_abcdjm_dcl,Science
-CP04OSSM-MFD37-07-ZPLSCC000,recovered_host,,Ingest.zplsc-c-dcl_recovered,,,Science
+CP04OSSM-MFD37-07-ZPLSCC000,recovered_host,zplsc_c_instrument,Ingest.zplsc-c-dcl_recovered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
 CP04OSSM-MFD37-07-ZPLSCC000,telemetered,zplsc_c_instrument,Ingest.zplsc-c-dcl_telemetered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
 CP04OSSM-RIC21-00-CPMENG000,recovered_host,cg_cpm_eng_cpm_recovered,Ingest.cg-cpm-eng-cpm_recovered,cg_cpm_eng_cpm_recovered_driver,cg_cpm_eng_cpm,Engineering
 CP04OSSM-RIC21-00-CPMENG000,telemetered,cg_cpm_eng_cpm,Ingest.cg-cpm-eng-cpm_telemetered,cg_cpm_eng_cpm_telemetered_driver,cg_cpm_eng_cpm,Engineering
@@ -4650,6 +4655,18 @@ GI03FLMB-RIS01-04-PHSENF000,telemetered,phsen_abcdef_sio_mule_instrument,Ingest.
 GI03FLMB-RIS01-04-PHSENF000,telemetered,phsen_abcdef_sio_mule_metadata,Ingest.phsen-abcdef-sio_telemetered,phsen_abcdef_sio_telemetered_driver,phsen_abcdef_sio,Science
 GI03FLMB-RIS01-05-FLORTD000,recovered_host,flort_sample,Ingest.flort-dj-sio_recovered,flort_dj_sio_recovered_driver,flort_dj_sio,Science
 GI03FLMB-RIS01-05-FLORTD000,telemetered,flort_sample,Ingest.flort-dj-sio_telemetered,flort_dj_sio_telemetered_driver,flort_dj_sio,Science
+GI05MOAS-GL363-01-FLORDM000,recovered_host,flord_m_glider_instrument_recovered,Ingest.flord-m-glider_recovered,flord_m_glider_recovered_driver,glider,Science
+GI05MOAS-GL363-01-FLORDM000,telemetered,flord_m_glider_instrument,Ingest.flord-m-glider_telemetered,flord_m_glider_telemetered_driver,glider,Science
+GI05MOAS-GL363-02-DOSTAM000,recovered_host,dosta_abcdjm_glider_recovered,Ingest.dosta-abcdjm-glider_recovered,dosta_abcdjm_glider_recovered_driver,glider,Science
+GI05MOAS-GL363-02-DOSTAM000,telemetered,dosta_abcdjm_glider_instrument,Ingest.dosta-abcdjm-glider_telemetered,dosta_abcdjm_glider_telemetered_driver,glider,Science
+GI05MOAS-GL363-04-CTDGVM000,recovered_host,ctdgv_m_glider_instrument_recovered,Ingest.ctdgv-m-glider_recovered,ctdgv_m_glider_recovered_driver,glider,Science
+GI05MOAS-GL363-04-CTDGVM000,telemetered,ctdgv_m_glider_instrument,Ingest.ctdgv-m-glider_telemetered,ctdgv_m_glider_telemetered_driver,glider,Science
+GI05MOAS-GL453-01-FLORDM000,recovered_host,flord_m_glider_instrument_recovered,Ingest.flord-m-glider_recovered,flord_m_glider_recovered_driver,glider,Science
+GI05MOAS-GL453-01-FLORDM000,telemetered,flord_m_glider_instrument,Ingest.flord-m-glider_telemetered,flord_m_glider_telemetered_driver,glider,Science
+GI05MOAS-GL453-02-DOSTAM000,recovered_host,dosta_abcdjm_glider_recovered,Ingest.dosta-abcdjm-glider_recovered,dosta_abcdjm_glider_recovered_driver,glider,Science
+GI05MOAS-GL453-02-DOSTAM000,telemetered,dosta_abcdjm_glider_instrument,Ingest.dosta-abcdjm-glider_telemetered,dosta_abcdjm_glider_telemetered_driver,glider,Science
+GI05MOAS-GL453-04-CTDGVM000,recovered_host,ctdgv_m_glider_instrument_recovered,Ingest.ctdgv-m-glider_recovered,ctdgv_m_glider_recovered_driver,glider,Science
+GI05MOAS-GL453-04-CTDGVM000,telemetered,ctdgv_m_glider_instrument,Ingest.ctdgv-m-glider_telemetered,ctdgv_m_glider_telemetered_driver,glider,Science
 GI05MOAS-GL469-00-ENG000000,recovered_host,glider_eng_metadata_recovered,Ingest.glider-eng-glider_recovered,glider_eng_glider_recovered_driver,glider,Engineering
 GI05MOAS-GL469-00-ENG000000,recovered_host,glider_eng_recovered,Ingest.glider-eng-glider_recovered,glider_eng_glider_recovered_driver,glider,Engineering
 GI05MOAS-GL469-00-ENG000000,recovered_host,glider_eng_sci_recovered,Ingest.glider-eng-glider_recovered,glider_eng_glider_recovered_driver,glider,Engineering
@@ -5165,6 +5182,12 @@ GP05MOAS-GL453-02-DOSTAM000,recovered_host,dosta_abcdjm_glider_recovered,Ingest.
 GP05MOAS-GL453-02-DOSTAM000,telemetered,dosta_abcdjm_glider_instrument,Ingest.dosta-abcdjm-glider_telemetered,dosta_abcdjm_glider_telemetered_driver,glider,Science
 GP05MOAS-GL453-04-CTDGVM000,recovered_host,ctdgv_m_glider_instrument_recovered,Ingest.ctdgv-m-glider_recovered,ctdgv_m_glider_recovered_driver,glider,Science
 GP05MOAS-GL453-04-CTDGVM000,telemetered,ctdgv_m_glider_instrument,Ingest.ctdgv-m-glider_telemetered,ctdgv_m_glider_telemetered_driver,glider,Science
+GP05MOAS-GL469-01-FLORDM000,recovered_host,flord_m_glider_instrument_recovered,Ingest.flord-m-glider_recovered,flord_m_glider_recovered_driver,glider,Science
+GP05MOAS-GL469-01-FLORDM000,telemetered,flord_m_glider_instrument,Ingest.flord-m-glider_telemetered,flord_m_glider_telemetered_driver,glider,Science
+GP05MOAS-GL469-02-DOSTAM000,recovered_host,dosta_abcdjm_glider_recovered,Ingest.dosta-abcdjm-glider_recovered,dosta_abcdjm_glider_recovered_driver,glider,Science
+GP05MOAS-GL469-02-DOSTAM000,telemetered,dosta_abcdjm_glider_instrument,Ingest.dosta-abcdjm-glider_telemetered,dosta_abcdjm_glider_telemetered_driver,glider,Science
+GP05MOAS-GL469-04-CTDGVM000,recovered_host,ctdgv_m_glider_instrument_recovered,Ingest.ctdgv-m-glider_recovered,ctdgv_m_glider_recovered_driver,glider,Science
+GP05MOAS-GL469-04-CTDGVM000,telemetered,ctdgv_m_glider_instrument,Ingest.ctdgv-m-glider_telemetered,ctdgv_m_glider_telemetered_driver,glider,Science
 GP05MOAS-GL523-00-ENG000000,recovered_host,glider_eng_metadata_recovered,Ingest.glider-eng-glider_recovered,glider_eng_glider_recovered_driver,glider,Engineering
 GP05MOAS-GL523-00-ENG000000,recovered_host,glider_eng_recovered,Ingest.glider-eng-glider_recovered,glider_eng_glider_recovered_driver,glider,Engineering
 GP05MOAS-GL523-00-ENG000000,recovered_host,glider_eng_sci_recovered,Ingest.glider-eng-glider_recovered,glider_eng_glider_recovered_driver,glider,Engineering
@@ -6310,6 +6333,7 @@ RS03INT1-MJ03C-05-CAMDSB303,streamed,camds_disk_status,,kml.cam.camds.driver,,Sc
 RS03INT1-MJ03C-05-CAMDSB303,streamed,camds_health_status,,kml.cam.camds.driver,,Science
 RS03INT1-MJ03C-05-CAMDSB303,streamed,camds_image_metadata,,kml.cam.camds.driver,,Science
 RS03INT1-MJ03C-05-CAMDSB303,streamed,camds_video,,kml.cam.camds.driver,,Science
+RS03INT1-MJ03C-07-D1000A301,streamed,d1000_sample,,mclane.ras.d1000.driver,,Science
 RS03INT1-MJ03C-06-MASSPA301,streamed,massp_mcu_status,,harvard.massp.mcu.driver,,Science
 RS03INT1-MJ03C-06-MASSPA301,streamed,massp_rga_sample,,,,Science
 RS03INT1-MJ03C-06-MASSPA301,streamed,massp_rga_status,,,,Science
