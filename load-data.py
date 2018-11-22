@@ -10,7 +10,7 @@ parser.add_argument('-o','--option', required=True,
   choices=['regions', 'sites','nodes','instruments',
     'instrument_classes','instrument_models',
     'assets','cruises','deployments','calibrations',
-    'preload','data_streams','ingestions'],
+    'preload','data_streams','ingestions','reviews'],
   help='Type of data to load')
 parser.add_argument('-s','--server',
   choices=['production','development'],
@@ -51,6 +51,8 @@ def main():
     datateam.data_streams.load(db)
   elif args.option=="ingestions":
     datateam.ingestions.load(db)
+  elif args.option=="reviews":
+    datateam.reviews.load(db)
 
   datateam.import_log.log(db,args.option)
 

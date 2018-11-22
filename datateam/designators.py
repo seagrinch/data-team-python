@@ -71,9 +71,9 @@ def load_nodes(db):
 def load_instruments(db):
   """Load Instruments into the database"""
 
-  # Truncate table
-  r = db.truncate_table('instruments')
-  print "Truncated Instruments table"
+#   # Truncate table
+#   r = db.truncate_table('instruments')
+#   print "Truncated Instruments table"
 
 #   # Load in the Instrument Classes file for lookups
 #   catalogfile = 'infrastructure/instrument_classes.csv'
@@ -84,7 +84,8 @@ def load_instruments(db):
 #       vocab[row['class']] = row['name']
 
   # Save the Instrument
-  columns = ['reference_designator', 'parent_node', 'name', 'start_depth', 'end_depth', 'current_status', 'preferred_stream', 'preferred_parameter', 'location']
+  columns = ['reference_designator', 'parent_node', 'name', 'start_depth', 'end_depth', 'preferred_stream', 'preferred_parameter', 'location'] 
+  # Removed current_status to preserve edits
   with open("infrastructure/instruments.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:

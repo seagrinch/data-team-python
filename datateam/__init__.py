@@ -12,3 +12,4 @@ import instrument_model
 import preload
 import import_log
 import ingestions
+import reviews
