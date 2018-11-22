@@ -1515,7 +1515,7 @@ CE07SHSM-MFD37-03-DOSTAD000,recovered_inst,dosta_abcdjm_ctdbp_instrument_recover
 CE07SHSM-MFD37-03-DOSTAD000,telemetered,dosta_abcdjm_ctdbp_dcl_instrument,Ingest.dosta-abcdjm-ctdbp-dcl_telemetered,dosta_abcdjm_ctdbp_dcl_telemetered_driver,dosta_abcdjm_ctdbp_dcl,Science
 CE07SHSM-MFD37-06-CAMDSA000,,,,,,Science
 CE07SHSM-MFD37-07-ZPLSCC000,recovered_host,zplsc_c_instrument,Ingest.zplsc-c-dcl_recovered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
-CE07SHSM-MFD37-07-ZPLSCC000,recovered_inst,plsc_echogram_data,Ingest.zplsc-c_recovered,zplsc_c_recovered_driver,zplsc_c,Science
+CE07SHSM-MFD37-07-ZPLSCC000,recovered_inst,zplsc_echogram_data,Ingest.zplsc-c_recovered,zplsc_c_recovered_driver,zplsc_c,Science
 CE07SHSM-MFD37-07-ZPLSCC000,telemetered,zplsc_c_instrument,Ingest.zplsc-c-dcl_telemetered,zplsc_c_dcl_telemetered_driver,zplsc_c_dcl,Science
 CE07SHSM-RIC21-00-CPMENG000,recovered_host,cg_cpm_eng_cpm_recovered,Ingest.cg-cpm-eng-cpm_recovered,cg_cpm_eng_cpm_recovered_driver,cg_cpm_eng_cpm,Engineering
 CE07SHSM-RIC21-00-CPMENG000,telemetered,cg_cpm_eng_cpm,Ingest.cg-cpm-eng-cpm_telemetered,cg_cpm_eng_cpm_telemetered_driver,cg_cpm_eng_cpm,Engineering
