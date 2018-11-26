@@ -295,7 +295,6 @@ CE07SHSP-SP001-07-FLORTJ000,3-Wavelength Fluorometer,0,87,,flort_dj_cspp_instrum
 CE07SHSP-SP001-08-CTDPFJ000,CTD,0,87,,ctdpf_j_cspp_instrument,4,Surface Piercing Profiler
 CE07SHSP-SP001-09-PARADJ000,Photosynthetically Available Radiation,0,87,,parad_j_cspp_instrument,3236,Surface Piercing Profiler
 CE09OSPM-SBS01-00-STCENG000,Platform Controller,0,0,Engineering,,,
-CE09OSPM-SBS01-01-MOPAK0000,3-Axis Motion Pack,0,0,Engineering,,,
 CE09OSPM-WFP01-00-WFPENG000,Profiler Controller,15,540,Engineering,,,
 CE09OSPM-WFP01-01-VEL3DK000,3-D Single Point Velocity Meter,15,540,,vel3d_k_wfp_stc_instrument,3233,
 CE09OSPM-WFP01-02-DOFSTK000,Dissolved Oxygen,15,540,,dofst_k_wfp_instrument,1965,

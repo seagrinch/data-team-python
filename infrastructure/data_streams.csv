@@ -6181,8 +6181,8 @@ RS03ASHS-MJ03B-10-CTDPFB304,streamed,ctdpf_optode_hardware,,seabird.sbe16plus_v2
 RS03ASHS-MJ03B-10-CTDPFB304,streamed,ctdpf_optode_sample,,seabird.sbe16plus_v2.ctdpf_jb.driver,,Science
 RS03ASHS-MJ03B-10-CTDPFB304,streamed,ctdpf_optode_settings,,seabird.sbe16plus_v2.ctdpf_jb.driver,,Science
 RS03ASHS-MJ03B-10-CTDPFB304,streamed,ctdpf_optode_status,,seabird.sbe16plus_v2.ctdpf_jb.driver,,Science
-RS03ASHS-PN03B-H6-CAMHDA301,streamed,camhd_adread_status,,,,Science
-RS03ASHS-PN03B-H6-CAMHDA301,streamed,camhd_streaming_status,,,,Science
+RS03ASHS-PN03B-06-CAMHDA301,streamed,camhd_adread_status,,,,Science
+RS03ASHS-PN03B-06-CAMHDA301,streamed,camhd_streaming_status,,,,Science
 RS03AXBS-LJ03A-05-HPIESA301,streamed,calibration_status,,uw.hpies.ooicore.driver,,Science
 RS03AXBS-LJ03A-05-HPIESA301,streamed,echo_sounding,,uw.hpies.ooicore.driver,,Science
 RS03AXBS-LJ03A-05-HPIESA301,streamed,horizontal_electric_field,,uw.hpies.ooicore.driver,,Science
