@@ -3,6 +3,8 @@ import csv
 from .common import *
 import fnmatch
 import os
+import pandas as pd
+import datetime
 
 
 def find_review(db,reference_designator,deployment,stream):
@@ -53,3 +55,63 @@ def load(db):
         row['deployment'] = int(row['deployment'][-3:])
         data = remove_extraneous_columns(columns, row)
         save_review(db,data)
+
+
+def find_deployments(db,reference_designator):
+  """Find deployments by reference_designator"""
+  sql = 'reference_designator="%s"' % (reference_designator)
+  result = db.select('deployments',sql)
+  if len(result) > 0:
+    return result
+  else:
+    return False
+
+
+def yes_no(answer):
+    yes = set(['yes'])
+    no = set(['no','n'])
+    
+    while True:
+        choice = raw_input(answer).lower()
+        if choice in yes:
+           return True
+        elif choice in no:
+           return False
+        else:
+           print "Please respond with 'yes' or 'no'\n"
+
+def load_baseline(db):
+  """Load Review Baseline into the database"""
+
+  baseline = pd.read_csv("infrastructure/stream_review_baseline.csv")
+  columns = ['reference_designator', 'deployment', 'preferred_method', 'stream']
+  for index, row in baseline.iterrows():
+    row = row.to_dict()
+    row['preferred_method'] = row['method']
+#     print(row['reference_designator'])
+    deployments = find_deployments(db,row['reference_designator'])
+    for d in deployments:
+#       print(str(d['deployment_number']) + str(d['stop_date']))
+      if(d['stop_date'] is not None and d['stop_date'] < datetime.datetime(2018, 10, 1)):
+        row['deployment'] = d['deployment_number']
+        data = remove_extraneous_columns(columns, row)
+        save_review(db, data)
+      #  print('Good' + str(d['deployment_number']) + " " + d['stop_date'].strftime("%y-%m-%d"))
+      #else:
+      #  if(d['stop_date'] is None):
+      #    print('Bad' + str(d['deployment_number']))
+      #  else: 
+      #    print('Bad' + str(d['deployment_number']) + " " + d['stop_date'].strftime("%y-%m-%d"))
+
+  # One time update of Instrument Status
+  pyanswer = yes_no('Overwrite Instrument Status? ')
+  if(pyanswer):
+    instruments = baseline['reference_designator'].unique()
+    columns = ['reference_designator', 'current_status']
+    from datateam import designators
+    for inst in instruments:
+      data={}
+      data['reference_designator'] = inst
+      data['current_status'] = 'Todo'
+      designators.save(db, 'instruments', data, columns)
+

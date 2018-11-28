@@ -6,3 +6,4 @@ instrument_status_*.csv
 stats_data/
 daily_stats/
 test_scripts/
+inst_check/
