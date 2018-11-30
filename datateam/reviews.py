@@ -66,7 +66,7 @@ def load(db):
         row['reference_designator'] = ifile.split('/')[-1][0:27]
         row['deployment'] = int(row['deployment'][-3:])
         review = get_review(db,row['reference_designator'],row['deployment'],row['stream'])
-        if (review['status'] == None):
+        if (review['status'] is None):
           row['status'] = 'Tested'
         data = remove_extraneous_columns(columns, row)
         save_review(db,data)
