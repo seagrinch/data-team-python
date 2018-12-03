@@ -31,14 +31,14 @@ def save_review(db,data):
     print "Updated Review: " + data['reference_designator'] + ' ' + str(data['deployment']) + ' ' + str(data['stream'])
 
 
-def get_review(db,reference_designator,deployment,stream):
+def get_review_status(db,reference_designator,deployment,stream):
   """Get a Review record"""
   sql = 'reference_designator="%s" AND deployment="%s" AND stream="%s"' % (reference_designator, deployment, stream)
   result = db.select('reviews',sql)
   if len(result) > 0:
-    return result[0]
+    return result[0]['status']
   else:
-    return False
+    return None
 
 def load(db):
   """Load Reviews into the database"""
@@ -65,8 +65,8 @@ def load(db):
       for row in reader:
         row['reference_designator'] = ifile.split('/')[-1][0:27]
         row['deployment'] = int(row['deployment'][-3:])
-        review = get_review(db,row['reference_designator'],row['deployment'],row['stream'])
-        if (review['status'] is None):
+        status = get_review_status(db,row['reference_designator'],row['deployment'],row['stream'])
+        if (status is None):
           row['status'] = 'Tested'
         data = remove_extraneous_columns(columns, row)
         save_review(db,data)
