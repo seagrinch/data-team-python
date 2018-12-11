@@ -46,7 +46,7 @@ def load(db):
   # Allowed columns
   columns = ['reference_designator','deployment','preferred_method','stream',
   'start_days_missing','end_days_missing','location_diff_km',
-  'n_days_deployed','n_timestamps','n_days','deploy_depth','pressure_mean','pressure_diff','sampling_rate_seconds',
+  'n_days_deployed','n_timestamps','n_days','deploy_depth','pressure_compare','pressure_diff','sampling_rate_seconds',
   'gaps_num','gaps_num_days','timestamp_test','n_science_vars','valid_data_test',
   'variable_comparison_test','full_dataset_test','coordinate_test','file_downloaded','status']
 
