@@ -46,6 +46,7 @@ def load(db):
   load_streams(db)
   load_parameters_streams(db)
   load_stream_descriptions(db)
+  load_parameter_overrides(db)
 
 
 def load_parameters(db):
@@ -252,3 +253,16 @@ def load_stream_descriptions(db):
         save(db, 'streams', data)
 
   print "Step 5 - Custom Stream descriptions loaded"
+
+def load_parameter_overrides(db):
+  """Load custom Parameter overrides into the database"""
+  columns = ['id','data_product_type']
+  with open("repos/data-review-tools/parameter_type_updated_list/add_parameter_type.csv", 'rb') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+      row['data_product_type'] = row['add_parameter_type']
+      row['id'] = row['parameter_id']
+      data = remove_extraneous_columns(columns, row)
+      save(db, 'parameters', data)
+
+  print "Step 6 - Custom Parameter updates loaded"
