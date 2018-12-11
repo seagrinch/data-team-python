@@ -2,7 +2,7 @@
 # Script to load Data Team reviews into the database
 # Written by Sage 12/11/18
 
-source activate datateam
+# source activate datateam
 date
 
 # Switch to main directory

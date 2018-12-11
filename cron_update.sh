@@ -1,6 +1,7 @@
 #!/bin/bash
 # Script to load OOI Asset Management, Preload and Ingestions into the database
-source activate datateam
+
+# source activate datateam
 date
 
 # Switch to main directory
