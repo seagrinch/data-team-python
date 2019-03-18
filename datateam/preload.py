@@ -257,7 +257,7 @@ def load_stream_descriptions(db):
 def load_parameter_overrides(db):
   """Load custom Parameter overrides into the database"""
   columns = ['id','data_product_type']
-  with open("repos/data-review-tools/parameter_type_updated_list/add_parameter_type.csv", 'rb') as csvfile:
+  with open("repos/data-review-prep/parameter_type_updated_list/add_parameter_type.csv", 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
       row['data_product_type'] = row['add_parameter_type']

@@ -14,6 +14,8 @@ cd ../asset-management/
 git pull
 cd ../ingestion-csvs/
 git pull
+cd ../data-review-prep/
+git pull
 cd ../../
 
 # Update sqlite database for preload
