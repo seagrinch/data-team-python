@@ -18,7 +18,7 @@ pbr==5.1.1
 psycopg2==2.7.6.1
 python-dateutil==2.7.5
 pytz==2017.2
-PyYAML==3.13
+PyYAML==5.4
 requests==2.20.1
 requests-cache==0.4.13
 six==1.10.0
